@@ -222,292 +222,29 @@ settings:
 
 */
 
+/* 
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+<< Theme Colors 
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– 
+*/
 
-/* ==============================================================
-
-                CUSTOM TAG STYLING 
-
-===============================================================*/
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#obsidian i]:before {
-  content: "🟪 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#person i]:before {
-  content: "👤 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags*=\#bookmark i]:before {
-  content: "🔖 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#moc i]:before {
-  content: "🗺 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#pkm i]:before {
-  content: "🧠 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#archive i]:before {
-  content: "🗄 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#seedling i]:after {
-  content: " 🌱"
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#fleeting i]:after {
-  content: " 💨"
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#evergreen i]:after {
-  content: " 🌲"
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#literature-note i]:before {
-  content: "📓 "
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-tags~=\#school i]:after {
-  content: " 🏫"
-}
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-cssclass*=writing]:before {
-  content: "📝 "
-}
-
-
-body:not(.no-built-in-supercharged-links) .data-link-icon[data-link-kanban-plugin]:before {
-  content: "🏙 "
-}
-
-
-/* Tag Icon Hover Preview */
-body:not(.no-built-in-supercharged-links) .workspace-split.mod-root :not(.cm-link-alias)> :is([data-link-data-href], .data-link-icon)[data-link-tags~=\#literature-note i]:not([aria-label], .workspace-tab-header-inner-title):hover:after {
-  z-index: 9001;
-  color: var(--text-normal);
-  content: "\"" attr(data-link-aliases)"\"";
-  background-color: var(--bg3);
-  border: var(--thin-border);
-  border-radius: var(--radius-s);
-  max-width: 350px;
-  margin-left: 50px;
-  padding: 8px 10px;
-  font-size: .9rem;
-  position: absolute
-}
-
-
+/* Theme Gneneral Base & Accent */
 body {
-  --blockquote-style: normal;
-  --blockquote-color: var(--text-muted);
-  --blockquote-border-thickness: 1px;
-  --blockquote-border-color: var(--quote-opening-modifier);
-  --embed-block-shadow-hover: none;
-  --canvas-background: var(--text-on-accent);
-  --canvas-card-label-color: inherit;
-  --canvas-dot-pattern: var(--dot-color);
-  --canvas-color-1: inherit;
-  --canvas-color-2: inherit;
-  --canvas-color-3: inherit;
-  --canvas-color-4: inherit;
-  --canvas-color-5: inherit;
-  --canvas-color-6: inherit;
-  --font-ui-smaller: 11px;
-  --normal-weight: 400;
-  --bold-weight: 600;
-  --link-weight: inherit;
-  --inline-title-margin-bottom: 1rem;
-  --h1-size: 1.125em;
-  --h2-size: 1.05em;
-  --h3-size: 1em;
-  --h4-size: 0.90em;
-  --h5-size: 0.85em;
-  --h6-size: 0.85em;
-  --h1-weight: 600;
-  --h2-weight: 600;
-  --h3-weight: 500;
-  --h4-weight: 500;
-  --h5-weight: 500;
-  --h6-weight: 400;
-  --h1-variant: normal;
-  --h2-variant: normal;
-  --h3-variant: normal;
-  --h4-variant: normal;
-  --h5-variant: small-caps;
-  --h6-variant: small-caps;
-  --h1-style: normal;
-  --h2-style: normal;
-  --h3-style: normal;
-  --h4-style: normal;
-  --h5-style: normal;
-  --h6-style: normal;
-  --line-width: 40rem;
-  --line-height: 1.5;
-  --line-height-normal: var(--line-height);
-  --max-width: 88%;
-  --max-col-width: 18em;
-  --icon-muted: 0.5;
-  --nested-padding: 1.1em;
-  --folding-offset: 32px;
-  --list-edit-offset: 0.5em;
-  --list-indent: 2em;
-  --list-spacing: 0.075em;
-  --input-height: 32px;
-  --header-height: 40px;
-  --footnote-color: var(--color-base-50);
-  --footnote-border: 1px solid var(--ui1);
-  --metadata-label-width: 9rem;
-  --metadata-label-font-size: var(--font-adaptive-small);
-  --metadata-input-font-size: var(--font-adaptive-small);
-  --mobile-left-sidebar-width: 240pt;
-  --mobile-right-sidebar-width: 240pt;
-  --top-left-padding-y: 0px;
-  --image-muted: 0.7;
-  --image-radius: 4px;
-  --heading-spacing: 2em;
-  --p-spacing: 1.75rem;
-  --border-width: 1px;
-  --table-border-width: var(--border-width);
-  --table-selection: var(--text-selection);
-  --table-selection-border-color: var(--text-accent);
-  --table-selection-border-width: 0px;
-  --table-selection-border-radius: 0px;
-  --table-drag-handle-background-active: var(--text-selection);
-  --table-drag-handle-color-active: var(--text-accent);
-  --table-add-button-border-width: 0px;
-  --table-header-background: inherit;
-  --table-header-font: inherit;
-  --table-text-size: inherit;
-  --file-margins: var(--size-4-2) var(--size-4-12);
-  --border-radius-average: 11px;
-  --radius-s: calc(var(border-radius-average) * 2);
-  --radius-m: 0px;
-  --radius-l: 0px;
-  --input-radius: 0px;
-  --tab-radius-active: 0px;
-  --toggle-radius: 0px;
-  --toggle-thumb-radius: 0px;
-  --slider-thumb-radius: 0px;
-  --hr-color: var(--ui1);
-  --hr-thickness: 1.7px;
-  --image-size: 50
+    --base-h: 30;
+    --base-s: 0%;
+    --base-l: 96%;
+
+    --accent-h: 201;
+    --accent-s: 30%;
+    --accent-l: 50%;
 }
 
-/* MacOS Specific Padding */
-.mod-macos {
-  --top-left-padding-y: 24px;
-}
-
-/* Phone Specific Font Sizes */
-.is-phone {
-  --metadata-label-font-size: var(--font-adaptive-smaller);
-  --metadata-input-font-size: var(--font-adaptive-smaller);
-}
-
-/* High DPI Screen Adjustments */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2) {
-  .is-phone {
-    --border-width: 0.75px;
-  }
-}
-
+/* Basic Colors */
 body {
-  --base-h: 0;
-  --base-s: 0%;
-  --base-l: 96%;
-  --accent-h: 201;
-  --accent-s: 17%;
-  --accent-l: 50%
-}
-
-
-
-body {
-    --longform-bg-hue: 200;
-    --bg-hue-light: 230;
-    --bg-hue-dark: 230
-}
-
-
-
-.mac-os-native:is(.theme-light, .theme-dark) {
-    --bg-hue: 0;
-    --longform-bg-hue: 0;
-    --bg-sat: 0%
-}
-
-.theme-light {
-    --bg-sat: 25%;
-    --bg-hue: var(--bg-hue-light);
-    --color-accent: #1396a0;
-    --color-accent-hsl: 184deg 79% 35%;
-    --interactive-accent: #108189;
-    --alt-heading-color: #5460ab;
-    --secondary-accent: #c67e3f;
-    --hover-accent: #ff1492;
-    --link-unresolved-color: #6fb74e;
-    --text-accent-1: #5c45a0
-}
-
-.theme-dark {
-    --bg-sat: 15%;
-    --bg-hue: var(--bg-hue-dark);
-    --color-accent: #18c1cd;
-    --color-accent-hsl: 184deg 79% 35%;
-    --interactive-accent: #108189;
-    --alt-heading-color: #8c96d9;
-    --secondary-accent: #da975d;
-    --hover-accent: #ff47a9;
-    --link-unresolved-color: #6fb74e
-}
-
-
-.theme-light {
-    --color-base-00: hsl(var(--bg-hue)calc(var(--bg-sat)*1.5)99%);
-    --color-base-10: hsl(var(--bg-hue)var(--bg-sat)97%);
-    --color-base-20: hsl(var(--bg-hue)var(--bg-sat)95%);
-    --color-base-25: hsl(var(--bg-hue)var(--bg-sat)92%);
-    --color-base-30: hsl(var(--bg-hue)var(--bg-sat)88%);
-    --color-base-35: hsl(var(--bg-hue)var(--bg-sat)83%);
-    --color-base-40: hsl(var(--bg-hue)var(--bg-sat)74%);
-    --color-base-50: hsl(var(--bg-hue)var(--bg-sat)67%);
-    --color-base-60: hsl(var(--bg-hue)var(--bg-sat)44%);
-    --color-base-70: hsl(var(--bg-hue)var(--bg-sat)35%);
-    --color-base-85s: hsl(var(--bg-hue)calc(var(--bg-sat)*2)24%);
-    --color-base-100: hsl(var(--bg-hue)var(--bg-sat)13%)
-}
-
-
-
-
-.theme-dark {
-    --color-base-00: hsl(var(--bg-hue)var(--bg-sat)12%);
-    --color-base-10: hsl(var(--bg-hue)var(--bg-sat)14%);
-    --color-base-20: hsl(var(--bg-hue)var(--bg-sat)16%);
-    --color-base-25: hsl(var(--bg-hue)var(--bg-sat)18%);
-    --color-base-30: hsl(var(--bg-hue)var(--bg-sat)22%);
-    --color-base-35: hsl(var(--bg-hue)var(--bg-sat)25%);
-    --color-base-40: hsl(var(--bg-hue)var(--bg-sat)33%);
-    --color-base-50: hsl(var(--bg-hue)var(--bg-sat)40%);
-    --color-base-60: hsl(var(--bg-hue)var(--bg-sat)60%);
-    --color-base-70: hsl(var(--bg-hue)var(--bg-sat)73%);
-    --color-base-85s: hsl(var(--bg-hue)calc(var(--bg-sat)*2)82%);
-    --color-base-100: hsl(var(--bg-hue)var(--bg-sat)85%)
-}
-
-
-
-.theme-dark,
-.theme-light {
-    --hotkey-color: var(--secondary-accent);
-    --bold-color: var(--hover-accent);
-    --italic-color: var(--text-accent-hover);
-    --text-selection: hsl(var(--color-accent-hsl)/20%);
-    --text-normal: var(--color-base-85s);
-    --active-line-color: var(--color-accent);
+    --color-h3-orange: hsl(38, 60%, 63%); /* Deletable */
+    --color-h3-green: hsl(148, 47%, 51%); /* Deletable */
+    --color-h3-alt: hsl(226, 95%, 76%);
+    --color-h4-alt: hsl(151, 60%, 55%);
     --color-red: #fb464c;
     --color-green: #44cf6e;
     --color-orange: #e9973f;
@@ -519,23 +256,61 @@ body {
     --color-blue: #07f;
     --color-purple: #866bc5;
     --color-pink: #fa99cd;
+
+
+/* Additional Colors */
+
+    --halcyon-accent-h: 40;
+    --halcyon-accent-s: 100%;
+    --halcyon-accent-l: 70%;
+
+	--halcyon-accent: #ffcc66;
+    --halcyon-palette-cyan: #5ccfe6;
+    --halcyon-palette-lime: #bae67e;
+    --halcyon-palette-orange: #ffae57;
+    --halcyon-palette-yellow: #ffd580;
+    --halcyon-palette-lilac: #c3a6ff;
+    --halcyon-palette-salmon: #ef6b73;
+    --halcyon-code-variable: var(--halcyon-base-grey-dark);
+    --halcyon-code-function: var(--halcyon-palette-yellow);
+    --halcyon-code-operator: var(--halcyon-palette-orange);
+    --halcyon-code-error: var(--halcyon-palette-salmon);
+    --halcyon-code-keyword: var(--halcyon-palette-lilac);
+    --halcyon-palette-sea-green: #8fbcbb;
+    --halcyon-palette-cyan: #88c0d0;
+    --halcyon-palette-frost: #81a1c1;
+    --halcyon-palette-mild-blue: #5e81ac;
+    --halcyon-palette-salmon: #fc6e68;
+    --halcyon-palette-red-2: #bf616a;
+    --halcyon-palette-dank: #a3be8c;
+    --halcyon-palette-mid-purple: #a36b99;
+
     --color-sea-green: #8fbcbb;
     --color-cyan: #88c0d0;
     --color-frost: #81a1c1;
     --color-mild-blue: #5e81ac;
-    --color-salmon: #FC6E68;
+    --color-salmon: #fc6e68;
     --color-red-2: #bf616a;
     --color-dank: #a3be8c;
     --color-mid-purple: #a36b99;
+
+
+/* ─────────── Accent Colors ─────────── */
+
+/* Default accent colors */
+
     --text-accent-1: #5c45a0;
-    --accent-1: #FF00FF;
-    --accent-2: #00FFFF;
-    --accent-3: #00FF00;
-    --accent-4: #FFFF00;
-    --accent-5: #FF0000;
-    --accent-6: #0000FF;
+    --secondary-accent: #c67e3f;
+
+    --accent-1: #ff00ff;
+    --accent-2: #00ffff;
+    --accent-3: #00ff00;
+    --accent-4: #ffff00;
+    --accent-5: #ff0000;
+    --accent-6: #0000ff;
     --accent-7: #4e3782;
 
+    /* Muted Accent Colors */
     --accent-1-muted: #ff79c6;
     --accent-2-muted: #8be9fd;
     --accent-3-muted: #50fa7b;
@@ -543,106 +318,861 @@ body {
     --accent-5-muted: #ff5555;
     --accent-6-muted: #bd93f9;
 
-    --Fold0: #d32f2f;
-    --Fold1: #f39b9b;
-    --Fold2: #f0ae59;
-    --Fold3: #f1ca5d;
-    --Fold4: #9dcd78;
-    --Fold5: #8ab6e2;
-    --Fold6: #aaa5db;
-    --Fold7: #8b4687;
-    --Fold8: #cda485;
-    --Fold9: #b9c0c7;
-    --FoldA: #f0aaaa;
-    --FoldB: #f1b86f;
-    --FoldC: #7acc93;
-    --FoldD: #87c9d9;
-    --FoldE: #96abde;
-    --FoldF: #eb9fc9;
+
+/* UI Colors */
+
     --ui1: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 6%));
     --ui2: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 12%));
     --ui3: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 20%));
+
+
+/* Text Colors */
+
     --tx1: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 90%));
     --tx2: hsl(var(--base-h), calc(var(--base-s) - 20%), calc(var(--base-l) - 45%));
     --tx3: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) - 25%));
     --tx4: hsl(var(--base-h), calc(var(--base-s) - 10%), calc(var(--base-l) - 60%));
+
+
+/* Accent Colors */
+
     --ax1: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
     --ax2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 8%));
     --ax3: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 6%));
+
+
+/* Highlight Colors */
+/** 
+* Using "--text-on-accent" ensures that the highlighted text
+* is the same color as the rest of the body's normal text.
+**/
+
     --hl1: hsla(var(--accent-h), 50%, calc(var(--base-l) - 20%), 30%);
     --hl2: rgba(255, 225, 0, 0.5);
+    --color-highlight-text: var(--text-on-accent); /* Highlighted text color */
+    --color-highlight-bg: rgba(255, 252, 59, 0.08); /* Background color for highlights */
+    --color-highlight-border: rgba(255, 252, 59, 0.4); /* Border color for highlights */
+
+
+/* Special Colors */
+
     --sp1: white;
+    --color-white: #F8F8F2; /* SB Highlighted Text */
+
+
+/* Text Colors */
+
     --text-muted: var(--color-base-70);
     --text-gray: var(--color-base-60);
     --text-faint: var(--color-base-50);
     --text-accent: var(--color-accent);
     --text-accent-hover: var(--hover-accent);
+
+
+/* Interactive Colors */
+
     --interactive-normal: var(--color-base-00);
     --interactive-hover: var(--color-base-20);
     --interactive-accent-hsl: var(--color-accent-hsl);
     --interactive-accent-hover: var(--hover-accent);
+
+
+/* Tags */
+
     --tag-color: var(--color-sea-green);
-    --tag-color-hover: var(--text-accent-hover);
-    --tag-radius: var(--radius-s);
-    --link-color: var(--text-accent);
-    --link-color-hover: var(--text-accent-hover);
-    --link-external-color: var(--text-accent);
-    --link-external-color-hover: var(--text-accent-hover);
-    --inline-code-color: var(--secondary-accent)
+
+/* Border Colors */
+
+    --border-300: rgba(255, 255, 255, 0.25);
+    --border-500: rgba(100, 100, 100, 0.25);
+    --border-700: rgba(0, 0, 0, 0.15);
+    --border-900: hsl(219, 10%, 29%);
+
+
+/* Shadow Colors */
+
+    --shadow-300: rgba(0, 0, 0, 0.15);
+    --shadow-500: rgba(0, 0, 0, 0.65);
+    --shadow-700: rgba(0, 0, 0, 0.95);
+    --shadow-small: 0px 3px 12px -2px rgba(14, 11, 11, 0.5);
+    --shadow-medium: 0px 3px 3.1px -20px rgba(0, 0, 0, 0.2), 0px 24px 25px -20px rgba(0, 0, 0, 0.35);
+    --shadow-large: 0px 2px 2.3px -52px rgba(0, 0, 0, 0.448), 0px 5.6px 6.3px -52px rgba(0, 0, 0, 0.6), 0px 13.6px 15.1px -52px rgba(0, 0, 0, 0.852), 0px 45px 50px -52px rgba(0, 0, 0, 1);
+
+
+/* Gray Colors */
+
+    --color-gray-10: hsl(225, 17%, 88%);
+    --color-gray-15: hsl(225, 17%, 84%);
+    --color-gray-20: hsl(224, 37%, 80%); /* SB Common Text & Icons on Hover */
+    --color-gray-30: hsl(224, 26%, 70%);
+    --color-gray-40: hsl(224, 17%, 68%); /* Metadata Text */
+    --color-gray-50: hsl(226, 10%, 47%); /* Graph Lines & Lighter Borders */
+    --color-gray-60: hsl(225, 14%, 55%); /* SB Common Icons & Status Bar Text */
+    --color-gray-70: hsl(225, 11%, 36%); /* SB Disabled Text & Titlebar */
+    --color-gray-80: hsl(225, 18%, 25%); /* Borders & Highlighted Shape */
+    --color-gray-90: hsl(225, 12%, 20%); /* Content BG */
+    --color-gray-100: hsl(231, 9%, 15%); /* SB Content BG & Metadata */
+
+
+/* Black */
+
+    --color-black: hsl(230, 9%, 13%); /* Workspace BG */
+    --color-blacker: hsl(230, 8%, 10%);
+
+
+/* Cyan Colors */
+
+    --color-cyan-300: hsl(183, 29%, 62%);
+    --color-cyan-500: hsl(192, 46%, 68%);
+    --color-cyan-510: hsl(191, 65%, 59%);
+    --color-cyan-520: hsl(191, 57%, 59%);
+    --color-cyan-530: hsl(191, 54%, 64%);
+    --color-cyan-533: hsl(191, 90%, 50%);
+    --color-cyan-540: hsl(194, 69%, 54%);
+    --color-cyan-555: hsl(175, 85%, 75%);
+    --color-cyan-577: hsl(13, 52%, 80%);
+    --color-cyan-700: hsl(194, 50%, 47%);
+    --color-cyan-900: hsl(196, 27%, 41%);
+    --color-cyan-gradient-1: linear-gradient(180deg, #82b7ba, #77aeb3, #6da5ac, #629ca5, #5a919c, #558590, #4f7984, #496d79);
+    --color-cyan-gradient-2: linear-gradient(180deg, #6de0fd, #5dd6f5, #56d3f2, #4fcfef, #48cceb, #40c8e8, #37c5e5, #2dc1e2);
+
+/* 300 -> 900 */
+
+/* Magenta Colors */
+
+    --color-magenta-300: hsl(334, 37%, 65%);
+    --color-magenta-310: hsl(338, 100%, 87%);
+    --color-magenta-500: hsl(338, 100%, 80%);
+    --color-magenta-700: hsl(334, 100%, 75%);
+    --color-magenta-710: hsl(342, 100%, 74%);
+    --color-magenta-900: hsl(317, 62%, 65%);
+    --color-magenta-910: hsl(342, 96%, 68%);
+    --color-magenta-920: hsl(342, 31%, 34%);
+    --color-magenta-gradient-1: linear-gradient(180deg, #ffb1ce, #ffa3ca, #f897c4, #f88cc4, #ef7dbe, #ea77be, #e472be, #dd6ebe);
+    --color-magenta-gradient-2: linear-gradient(180deg, #ff99be, #fc91bd, #f88abd, #f483bd, #ef7dbe, #ea77be, #e472be, #dd6ebe);
+
+
+/* Yellow Colors */
+
+    --color-yellow-300: hsl(61, 100%, 75%);
+    --color-yellow-310: hsl(61, 46%, 69%);
+    --color-yellow-355: hsl(61, 55%, 69%);
+    --color-yellowish-355: hsl(51, 55%, 69%);
+    --color-yellow-500: hsl(59, 71%, 68%);
+    --color-yellow-510: hsl(59, 51%, 68%);
+    --color-yellow-700: hsl(58, 86%, 66%);
+    --color-yellow-900: hsl(59, 81%, 47%);
+    --color-yellow-gradient-1: linear-gradient(180deg, #fcff80, #fafd6b, #f9fb57, #f6f843, #f4f430, #f0ef1e, #e4e213, #ccc914);
+    --color-yellow-gradient-2: linear-gradient(-90deg, #f3ee5e, #f1ec50, #f0eb41, #eee933, #ece725, #eae516, #dbd815, #ccc914);
+
+
+/* Orange Colors */
+
+    --color-orange-300: hsl(28, 93%, 66%);
+    --color-orange-310: hsl(28, 63%, 66%);
+    --color-orange-500: hsl(28, 43%, 47%);
+
+
+/* Red Colors */
+
+    --color-red-300: hsl(3, 93%, 66%);
+    --color-red-500: hsl(3, 43%, 47%);
+
+
+/* Green Colors */
+
+    --color-green-300: hsl(151, 100%, 81%);
+    --color-green-500: hsl(124, 54%, 75%);
+    --color-green-700: hsl(151, 54%, 64%);
+    --color-green-710: hsl(151, 54%, 64%);
+    --color-green-900: hsl(166, 74%, 45%);
+    --color-green-910: hsl(158, 85%, 45%);
+    --color-green-920: hsl(167, 83%, 31%);
+    --color-green-gradient-1: linear-gradient(180deg, #9effd0, #8bfcc9, #79f9c4, #67f4bf, #57efbb, #48e8b7, #39e0b4, #2cd8b0);
+    --color-green-gradient-2: linear-gradient(180deg, #a2f49a, #89f18d, #79ee8b, #69ea8d, #59e692, #4ae299, #3bdda3, #2cd8b0);
+
+
+/* Purple Colors */
+
+    --color-purple-300: hsl(255, 49%, 76%);
+    --color-purple-333: hsl(245, 37%, 80%);
+    --color-purple-500: hsl(255, 100%, 86%);
+    --color-purple-555: hsl(255, 100%, 86%);
+    --color-purple-577: hsl(255, 100%, 86%);
+    --color-purple-700: hsl(260, 100%, 79%);
+    --color-purple-900: hsl(263, 46%, 61%);
+    --color-purple-910: hsl(263, 37%, 69%);
+    --color-purple-920: hsl(263, 39%, 46%);
+    --color-purple-gradient-1: linear-gradient(180deg, #d9ccff, #d2c4ff, #cbbcff, #c4b4ff, #bdabff, #b5a3ff, #ad9bff, #a593ff);
+    --color-purple-gradient-2: linear-gradient(180deg, #d9ccff, #ccbafc, #c0a9f8, #b59af2, #ab8cea, #a281e1, #9977d6, #916ec9);
+
+
+/* Slate Colors */
+
+    --color-slate-300: hsl(220, 23%, 90%);
+    --color-slate-500: hsl(224, 37%, 80%);
+    --color-slate-700: hsl(223, 18%, 68%);
+    --color-slate-900: hsl(225, 14%, 40%);
+    --color-slate-gradient-1: linear-gradient(180deg, #eff1f5, #e3e6ed, #d7dce5, #ccd1dd, #c0c7d5, #b5bccd, #aab2c5, #9fa7bc);
+    --color-slate-gradient-2: linear-gradient(180deg, #b9c3df, #aab4cf, #9ca5bf, #8e97b0, #8c96b1, #828ba5, #70778f, #656d85);
+
+/* MD Colors */
+    --md-color-text: var(--color-cyan-530);
+    --md-color-text-muted: var(--color-cyan-700);
+    --md-color-text-faint: var(--color-cyan-900);
+    --md-color-bold: var(--color-yellow-500);
+    --md-color-italic: var(--color-purple-500);
+    --md-color-bolditalic: var(--color-gray-10);
+    --md-color-strikethrough: var(--text-faint);
+    --md-color-highlight-text: var(--color-highlight-text); /* Dracula theme `foreground` color: #F8F8F2 */
+    --md-color-highlight-bg: var(--color-highlight-gradient);
+    --md-color-comment: var(--color-gray-15);
+    --md-color-footnote: var(--color-gray-50);
+    --md-color-link: var(--color-magenta-700);
+    --md-color-link-hover: var(--color-magenta-310);
+    --md-color-link-active: var(--color-magenta-900);
+    --md-color-blockquotes: var(--md-color-text);
+    --md-color-blockquotes-border: var(--color-purple-900);
+    --md-color-tag: var(--color-green-700);
+    --md-color-tag-hover: var(--color-green-300);
+    --md-color-tag-active: var(--color-green-900);
+    --md-color-code-cyan: var(--color-cyan-300);
+    --md-color-code-magenta: var(--color-magenta-300);
+    --md-color-code-yellow: var(--color-yellow-310);
+    --md-color-code-purple: var(--color-purple-910);
+    --md-color-code-green: var(--color-green-500);
+    --md-color-code-slate: var(--color-slate-900);
+    --md-color-code-gray: var(--color-slate-500);
+    --md-color-code-white: var(--color-slate-300);
+    --md-color-border: rgb(66, 71, 80);
+}
+
+/*
+───────────────────────────────────────────────────────────── 
+*               <<  THEME COLORS  >> 
+─────────────────────────────────────────────────────────────
+*/
+
+/* 
+ * ───────────────────────────────────────────────────────────── 
+ * SECTION: Background Hue Definitions 
+ * ─────────────────────────────────────────────────────────────
+ *
+ * Defines color variations based on the background hue.
+ * The colors are calculated using HSL (Hue, Saturation, Lightness) values.
+ *
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* Light Theme Base Hues */
+:root {
+    --bg-hue-light: 230;
+}
+
+/* Dark Theme Base Hues */
+:root {
+    --bg-hue-dark: 253;
+    --bg-hue-dark-alt: 224;
+}
+
+/* Saturation Levels */
+:root {
+    --bg-sat-light: 25%;
+    --bg-sat-dark: 27%;
+    --bg-sat-dark-alt: 15%;
 }
 
 
+
+/* 
+ * ───────────────────────────────────────────────────────────── 
+ * SECTION: Base Colors
+ * ─────────────────────────────────────────────────────────────
+ * 
+ * TABLE OF CONTENTS:
+ *  1. Shimmering Focus (Light Theme) Color Base
+ *  2. Dracula + LYT Inspired Color Base
+ *  3. LYT Color Base
+ *
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Light Base Colors 
+─────────────────────────────────────────────────────────────
+*/
+
+
+/* Light Base Colors - Shimmering Focus Theme */
+.theme-light {
+    --bg-hue: var(--bg-hue-light);
+    --bg-sat: var(--bg-sat-light);
+
+    --color-base-00: hsl(var(--bg-hue) calc(var(--bg-sat) * 1.5) 99%);
+    --color-base-10: hsl(var(--bg-hue) var(--bg-sat) 97%);
+    --color-base-20: hsl(var(--bg-hue) var(--bg-sat) 95%);
+    --color-base-25: hsl(var(--bg-hue) var(--bg-sat) 92%);
+    --color-base-30: hsl(var(--bg-hue) var(--bg-sat) 88%);
+    --color-base-35: hsl(var(--bg-hue) var(--bg-sat) 83%);
+    --color-base-40: hsl(var(--bg-hue) var(--bg-sat) 74%);
+    --color-base-50: hsl(var(--bg-hue) var(--bg-sat) 67%);
+    --color-base-60: hsl(var(--bg-hue) var(--bg-sat) 44%);
+    --color-base-70: hsl(var(--bg-hue) var(--bg-sat) 35%);
+    --color-base-85s: hsl(var(--bg-hue) calc(var(--bg-sat) * 2) 24%);
+    --color-base-100: hsl(var(--bg-hue) var(--bg-sat) 13%);
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Dark Base Colors 
+─────────────────────────────────────────────────────────────
+*/
+
+/* Dracula Color Base */
+.theme-dark {
+    --bg-hue: var(--bg-hue-dark);
+    --bg-sat: var(--bg-sat-dark);
+
+    --color-base-00: hsl(var(--bg-hue), var(--bg-sat), 15%);
+    --color-base-10: hsl(var(--bg-hue), var(--bg-sat), 25%);
+    --color-base-20: hsl(var(--bg-hue), var(--bg-sat), 20%);
+    --color-base-25: hsl(var(--bg-hue), var(--bg-sat), 20%);
+    --color-base-30: hsl(var(--bg-hue), var(--bg-sat), 27%);
+    --color-base-35: hsl(var(--bg-hue), var(--bg-sat), 30%);
+    --color-base-40: hsl(var(--bg-hue), var(--bg-sat), 35%);
+    --color-base-50: hsl(var(--bg-hue), var(--bg-sat), 70%);
+    --color-base-60: hsl(var(--bg-hue), var(--bg-sat), 70%);
+    --color-base-70: hsl(var(--bg-hue), var(--bg-sat), 83%);
+    --color-base-85s: hsl(var(--bg-hue), calc(var(--bg-sat) * 2), 89%);
+    --color-base-100: hsl(var(--bg-hue), var(--bg-sat), 85%);
+}
+
+/* LYT Color Base */
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --bg-hue: var(--bg-hue-dark-alt);
+    --bg-sat: var(--bg-sat-dark-alt);
+
+    --color-base-00: hsl(var(--bg-hue), var(--bg-sat), 10%);
+    --color-base-10: hsl(var(--bg-hue), calc(var(--bg-sat) + 2%), 13%);
+    --color-base-20: hsl(calc(var(--bg-hue) + 7), calc(var(--bg-sat) + 2%), 15%);
+    --color-base-25: hsl(calc(var(--bg-hue) + 1), calc(var(--bg-sat) + 5%), 20%);
+    --color-base-30: hsl(calc(var(--bg-hue) + 1), calc(var(--bg-sat) + 11%), 25%);
+    --color-base-35: hsl(calc(var(--bg-hue) + 1), calc(var(--bg-sat) - 4%), 36%);
+    --color-base-40: hsl(calc(var(--bg-hue) + 1), calc(var(--bg-sat) - 1%), 55%);
+    --color-base-50: hsl(calc(var(--bg-hue) + 2), calc(var(--bg-sat) - 5%), 47%);
+    --color-base-60: hsl(var(--bg-hue), calc(var(--bg-sat) + 2%), 68%);
+    --color-base-70: hsl(var(--bg-hue), calc(var(--bg-sat) + 11%), 70%);
+    --color-base-100: hsl(var(--bg-hue), calc(var(--bg-sat) + 22%), 80%);
+}
+
+/*
+ * ───────────────────────────────────────────────────────────── 
+ * SECTION: Background and Border Settings
+ * ─────────────────────────────────────────────────────────────
+ *
+ * Universal Background Variables.
+ * Establishes uniform method to apply theme color wraps. 
+ *
+ * ─────────────────────────────────────────────────────────────
+*/
+
 body {
-    --font-text-theme: "iA Writer Quattro S";
-    --font-interface-theme: "Recursive S";
-    --font-monospace-theme: "Input Mono S";
-    --line-height-tight: 1.2;
-    --code-block-scaling: 1;
-    --code-size: calc(var(--font-small)*var(--code-block-scaling));
-    --h1-font: var(--font-heading-theme);
-    --h2-font: var(--font-heading-theme);
-    --h3-font: var(--font-heading-theme);
-    --h4-font: var(--font-heading-theme);
-    --h5-font: var(--font-heading-theme);
-    --h6-font: var(--font-heading-theme);
-    --heading-scaling: 1;
-    --h1-size: calc(1.7em*var(--heading-scaling));
-    --h2-size: calc(1.5em*var(--heading-scaling));
-    --h3-size: calc(1.35em*var(--heading-scaling));
-    --h4-size: calc(1.2em*var(--heading-scaling));
-    --h5-size: calc(1.1em*var(--heading-scaling));
-    --h6-size: calc(1em*var(--heading-scaling));
-    --inline-title-color: var(--text-gray);
-    --inline-title-style: normal;
-    --inline-title-margin-bottom: .75em;
-    --tag-size: var(--font-text-size);
-    --tag-decoration-hover: underline;
-    --tag-background: none;
-    --tag-background-hover: none;
-    --tag-border-width: 0;
-    --tag-padding-x: 0;
-    --tag-padding-y: 0;
-    --metadata-label-width: 9rem;
-    --metadata-label-font-size: var(--font-adaptive-small);
-    --metadata-input-font-size: var(--font-adaptive-small);
-    --metadata-gap: 1px;
-    --tab-background-active: var(--bg3);
-    --tab-stacked-header-width: 28px;
+    --bg1: var(--color-base-00);
+    --bg2: var(--color-base-10);
+    --bg3: var(--color-base-20);
+    --bg4: var(--color-base-25);
+    --bg5: var(--color-base-30);
+    --bg6: var(--color-base-35);
+    --bg7: var(--color-base-40);
+    --bg8: var(--color-base-50);
+    --bg9: var(--color-base-60);
+    --bg10: var(--color-base-70);
+    --bg11: var(--color-base-85);
+    --bg12: var(--color-base-100);
+}
+
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Light/Dark Theme - Primary & Secondary BG
+─────────────────────────────────────────────────────────────
+*/
+
+/* SHIMMERING BACKGROUND */
+body.theme-light {
+	--background-primary: var(--bg1);
+	--background-primary-alt: var(--bg2);
+	--background-secondary: var(--bg3);
+}
+
+/* DRACULA BACKGROUND */
+body.theme-dark {
+	--background-primary: #282A36;
+	--background-primary-alt: #2a2130;
+	--background-secondary: #2f2843;
+	--background-secondary-alt: #2a2442;
+}
+
+/* LYT BACKGROUND */
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --background-primary: var(--color-gray-90);
+    --background-primary-alt: var(--bg2);
+    --background-secondary: var(--bg3);
+    --background-secondary-alt: var(--color-black);
+}
+
+/*
+───────────────────────────────────────────────────────────── 
+* SECTION: Theme Specific Color Settings
+─────────────────────────────────────────────────────────────
+*/
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Accent Colors
+─────────────────────────────────────────────────────────────
+*/
+
+
+/* SHIMMERING Theme Accent Colors */
+.theme-light {
+    --color-accent: hsl(184, 79%, 35%);
+    --color-accent-hsl: 184, 79%, 35%; /* Dependent colors require commas */
+    --interactive-accent: hsl(184, 79%, 30%);
+    --alt-heading-color: hsl(232, 34%, 50%);
+    --secondary-accent: hsl(28, 54%, 51%);
+    --hover-accent: hsl(328, 100%, 54%);
+    --link-unresolved-color: hsl(101, 42%, 51%);
+}
+
+/* LYT Dark Theme Accent Colors */
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+    --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
+    --color-accent-2: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 3.8%));
+}
+
+/* 
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ SUBSECTION: Border Colors
+––––––––––––––––––––––––––––––––––––––––––––––––-–––––––––––––
+*/
+
+
+/* Light Theme Border Colors */
+body.theme-light {
+	--basic-border-color: var(--bg8);
+	--thin-border: 1px solid var(--basic-border-color);
+	--basic-border: 2px solid var(--basic-border-color);
+	--muted-border-color: var(--color-base-30);
+	--thin-muted-border: 1px solid var(--muted-border-color);
+	--muted-border: 2px solid var(--muted-border-color);
+	--readability-text-shadow-dark: 1px 1px 0px hsl(0 0% 0% / 100%);
+
+}
+
+/* Dark Theme Border Colors */
+body.theme-dark {
+    --basic-border-color: var(--bg9);
+    --thin-border: 1px solid var(--basic-border-color);
+    --basic-border: 2px solid var(--basic-border-color);
+    --muted-border-color: var(--bg5);
+    --thin-muted-border: 1px solid var(--muted-border-color);
+    --muted-border: 2px solid var(--muted-border-color);
+    --radius-xs: 2px;
+    --readability-text-shadow-dark: 1px 1px 0px #000;
+}
+
+/* LYT Theme Border Colors */
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --basic-border-color: var(--color-base-50);
+    --thin-border: 1px solid var(--basic-border-color);
+    --basic-border: 2px solid var(--basic-border-color);
+    --muted-border-color: var(--color-base-30);
+    --thin-muted-border: 1px solid var(--muted-border-color);
+    --muted-border: 2px solid var(--muted-border-color);
+}
+
+
+
+body.theme-dark {
+    /* Interactive */
+    --interactive-normal: #2a2a2a;
+    --interactive-hover: #303030;
+    --interactive-accent: #483699;
+    --interactive-accent-rgb: 72, 54, 153;
+    --interactive-accent-hover: #4d3ca6;
+}
+
+/*
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Text Colors
+─────────────────────────────────────────────────────────────
+*/
+
+/* Dracula Dark Theme */
+body.theme-dark {
+    --text-accent: #bd93f9;
+    --text-accent-hover: #bd93f9;
+    --text-normal: #F8F8F2; /* formerly var(--color-cyan-530)*/ 
+    --text-bold: var(--color-yellowish-355);
+    --italic-color: #50FA7B; /* Actual Italic color */
+    --text-error: var(--halcyon-palette-salmon);
+    --text-muted: #6e6b7e; /* color of the file explorer font */
+    --text-faint: #6c6498; /* color of the ribbon */
+    --text-selection: #363948;
+    --text-on-accent: #f8f8f2;
+}
+
+/* LYT Dark Theme Text Colors */
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --text-normal: var(--color-cyan-530);
+    --text-muted: var(--color-gray-40);
+    --text-faint: var(--color-gray-60);
+    --text-faintly-muted: var(--color-gray-48);
+    --text-accent: var(--color-gray-20);
+    --text-on-accent: var(--color-white);
+    --text-accent-hover: var(--color-white);
+    --text-success: var(--color-green-920);
+    --text-error: var(--color-magenta-910);
+    --text-error-hover: var(--color-magenta-900);
+    --text-selection: rgba(134, 169, 209, 0.233);
+    --text-highlight-bg: var(--color-highlight-bg);
+    --text-highlight-bg-active: var(--color-highlight-bg);
+    --italic-color: var(--color-purple-577);
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Background Colors 
+─────────────────────────────────────────────────────────────
+*/
+
+/* LYT Dark Theme Background Mod/Border Colors  */
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --background-modifier-border: var(--color-gray-80);
+    --background-modifier-form-field: var(--color-base-25);
+    --background-modifier-form-field-highlighted: var(--color-blacker);
+    --background-modifier-cover: rgba(10, 10, 10, 0.4);
+    --background-modifier-success: var(--color-green-900);
+    --background-modifier-error: var(--color-magenta-910);
+    --background-modifier-error-rgb: hsl(235, 86, 131);
+    --background-modifier-error-hover: var(--color-magenta-920);
+
+    --border-300: rgba(255, 255, 255, 0.25); /* Light border */
+    --border-500: rgba(100, 100, 100, 0.25); /* Medium border */
+    --border-700: rgba(0, 0, 0, 0.15); /* Dark border */
+    --border-900: hsl(219, 10%, 29%); /* Darker border */
+    --border-xsm: rgba(255, 255, 255, 0.25); /* Extra small border */
+    --border-xsm-alt: rgba(100, 100, 100, 0.25); /* Alternative extra small border */
+    --LYT-border-bottom: var(--color-purple); /* Theme's Border Bottom */
+    --radius-xs: 2px;
+    --readability-text-shadow-dark: 1px 1px 0px #000;
+}
+
+/* 
+ * ───────────────────────────────────────────────────────────── 
+ * SECTION: Indentation Guides
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* Dracula Theme Indentation */
+body.theme-dark {
+    --indentation-guide: var(--border-900);
+    --indentation-guide-active: var(--border-300);
+    --indentation-guide-width: 1.3px;
+    --indentation-guide-width-active: var(--indentation-guide-width);
+    --indentation-guide-color: var(--text-faint);
+    --indentation-guide-color-active: var(--indentation-guide-color);
+    --nav-indentation-guide-color: var(--text-faint);
+    --indentation-guide-editing-indent: 1.5em; 
+    --indentation-guide-reading-indent: -0.83em;
+    --indentation-guide-source-indent: 0.2em;
+}
+
+/* LYT Theme - Indentation Guide */
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+	--indentation-guide: var(--border-900);
+	--indentation-guide-active: var(--border-300);
+	--indentation-guide-width: 1.5px;
+	--indentation-guide-width-active: var(--indentation-guide-width);
+	--indentation-guide-color: var(--text-faint);
+	--indentation-guide-color-active: var(--indentation-guide-color);
+	--nav-indentation-guide-color: var(--text-faint);
+	--indentation-guide-editing-indent: .94em; 
+	--indentation-guide-reading-indent: -0.83em;
+	--indentation-guide-source-indent: 0.2em;
+	}
+
+/*
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: Table Settings 
+─────────────────────────────────────────────────────────────
+*/
+
+/* Dark Theme - Dracula */
+body.theme-dark {
+    --table-border-width: var(--border-width);
+    --table-header-border-color: var(--bg5);
+    --table-header-background: var(--bg6);
+    --table-header-font: inherit;
     --table-header-size: 1em;
     --table-header-weight: 600;
     --table-text-size: var(--font-small);
     --table-white-space: normal;
+    --table-column-first-border-width: 0.3px;
+    --table-column-last-border-width: 0.3px;
+    --table-row-background-hover: rgba(0, 0, 0, 0.3);
+    --table-row-alt-background: rgba(0, 0, 0, 0.08);
+    --table-row-last-border-width: 0.3px;
+    --table-selection: var(--text-selection);
+    --table-selection-border-color: var(--text-accent);
+    --table-selection-border-width: 0px;
+    --table-selection-border-radius: 0px;
+    --table-drag-handle-background-active: var(--text-selection);
+    --table-drag-handle-color-active: var(--text-accent);
+    --table-add-button-border-width: 0.3px;
+    --table-cell-padding: 4px 10px;
+    --table-edge-cell-padding-first: 0;
+    --table-edge-cell-padding-last: 0;
+}
+
+/* Dark Theme - LYT */
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --table-white-space: normal;
+    --table-background: transparent;
     --table-border-width: 1px;
-    --table-border-color: var(--basic-border-color);
-    --table-header-border-color: var(--basic-border-color);
-    --table-header-border-width: 1px;
-    --table-header-background: var(--bg5);
-    --table-row-background-hover: var(--bg3);
-    --table-header-background-hover: var(--bg5);
-    --table-row-alt-background: var(--b-row);
-    --blockquote-border-thickness: 8px;
-    --blockquote-border-color: var(--bg5);
-    --blockquote-background-color: var(--bg3);
+    --table-border-color: var(--border-900);
+    --table-header-background: var(--color-gray-100);
+    --table-header-background-hover: var(--color-gray-100);
+    --table-header-border-width: var(--table-border-width);
+    --table-header-border-color: var(--table-border-color);
+    --table-header-font: inherit;
+    --table-header-size: inherit;
+    --table-header-weight: var(--font-semibold);
+    --table-header-color: var(--color-slate-300);
+    --table-text-size: inherit;
+    --table-text-color: inherit;
+    --table-column-max-width: none;
+    --table-column-alt-background: var(--table-background);
+    --table-column-first-border-width: var(--table-border-width);
+    --table-column-last-border-width: var(--table-border-width);
+    --table-row-background-hover: rgba(0, 0, 0, 0.3);
+    --table-row-alt-background: rgba(0, 0, 0, 0.08);
+    --table-row-last-border-width: var(--table-border-width);
+	--table-selection: var(--text-selection);
+    --table-selection-border-color: var(--text-accent);
+    --table-selection-border-width: 0px;
+    --table-selection-border-radius: 0px;
+    --table-drag-handle-background-active: var(--text-selection);
+    --table-drag-handle-color-active: var(--text-accent);
+    --table-add-button-border-width: 0.3px;
+    --table-cell-padding: 4px 10px;
+    --table-edge-cell-padding-first: 0;
+    --table-edge-cell-padding-last: 0;
+}
+
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: LYT Dark Theme File Navigator 
+─────────────────────────────────────────────────────────────
+*/
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --nav-item-size: var(--font-ui-small);
+    --nav-item-color: var(--color-gray-40);
+    --nav-item-color-hover: var(--color-cyan-500);
+    --nav-item-background-hover: var(--color-gray-90);
+    --nav-item-color-active: var(--color-cyan-500);
+    --nav-item-background-active: var(--color-gray-90);
+    --nav-item-color-highlighted: var(--text-accent-hover);
+    --nav-item-weight: inherit;
+    --nav-item-weight-hover: inherit;
+    --nav-item-weight-active: inherit;
+    --nav-item-white-space: none;
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: LYT Dark Theme Interaction Colors 
+─────────────────────────────────────────────────────────────
+*/
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --interactive-normal: var(--color-base-30);
+    --interactive-hover: var(--color-base-35);
+    --interactive-accent: var(--color-slate-900);
+    --interactive-accent-rgb: 239, 241, 245;
+    --interactive-accent-hover: var(--color-slate-700);
+    --interactive-success: var(--color-green-920);
+    --interactive-normal: var(--color-blacker);
+    --interactive-hover: var(--color-gray-90);
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: LYT Dark Theme Scrollbar Colors 
+─────────────────────────────────────────────────────────────
+*/
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --scrollbar-bg: transparent;
+    --scrollbar-thumb-bg: var(--color-gray-100);
+    --scrollbar-active-thumb-bg: var(--color-black);
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: LYT Dark Theme Shadow Colors 
+─────────────────────────────────────────────────────────────
+*/
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --shadow-xsm: rgba(0, 0, 0, 0.15); /* Extra small shadow */
+    --shadow-sm: 0px 3px 12px -2px rgba(14, 11, 11, 0.5); /* Small shadow */
+    --shadow-m: 0px 3px 3.1px -20px rgba(0, 0, 0, 0.2), 0px 24px 25px -20px rgba(0, 0, 0, 0.35); /* Medium shadow */
+    --shadow-l: 0px 2px 2.3px -52px rgba(0, 0, 0, 0.448), 0px 5.6px 6.3px -52px rgba(0, 0, 0, 0.6), 0px 13.6px 15.1px -52px rgba(0, 0, 0, 0.852), 0px 45px 50px -52px rgba(0, 0, 0, 1); /* Large shadow */
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: LYT Dark Theme Sheer Colors 
+─────────────────────────────────────────────────────────────
+*/
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --sheer-light: rgba(0, 0, 0, 0.35);
+    --sheer-medium: rgba(0, 0, 0, 0.65);
+    --sheer-dark: rgba(0, 0, 0, 0.95);
+}
+
+/* 
+───────────────────────────────────────────────────────────── 
+* SUBSECTION: LYT Dark Theme Miscellaneous Settings 
+─────────────────────────────────────────────────────────────
+*/
+.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --opacity-translucency: 0.75; /* General opacity setting for translucency */
+    --mono-rgb-0: 0, 0, 0; /* Black */
+    --mono-rgb-100: 255, 255, 255; /* White */
+    --input-shadow: 0px 1px 0px 1px var(--shadow-300); /* Input shadow */
+    --input-shadow-hover: 0px 1px 0px 1px var(--shadow-300); /* Hover state for input shadow */
+    --window-border: 1px solid var(--window-border-color);
+    --window-border-color: var(--color-gray-70);
+    --font-sans: 'DM Sans', 'Inter', -apple-system BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', Helvetica, Arial, sans-serif;
+    --font-mono: 'DM Mono', 'Fira Code', Courier, monospace;
+    --font-interface-theme: var(--font-sans);
+    --font-text-theme: var(--font-sans);
+    --font-monospace-theme: var(--font-mono);
+}
+
+
+/* 
+───────────────────────────────────────────────────────────
+* << General Theme Variables >>
+─────────────────────────────────────────────────────────── 
+*/
+
+/* Global Font and Weight Variables */
+body {
+    --font-ui-smaller: 11px;
+    --font-text-theme: var(--font-sans);
+    --font-interface-theme: var(--font-sans);
+    --font-monospace-theme: var(--font-mono);
+
+    --normal-weight: 400;
+    --bold-weight: 600;
+    --link-weight: inherit;
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Link Styles >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
+    --link-color: var(--color-magenta-700);
+    --link-color-hover: var(--color-magenta-700);
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --link-external-color: var(--color-magenta-700);
+    --link-external-color-hover: var(--color-magenta-700);
+    --link-external-decoration: underline;
+    --link-external-decoration-hover: underline;
+    --link-external-filter: none;
+    --link-unresolved-color: var(--color-magenta-700);
+    --link-unresolved-opacity: 0.65;
+    --link-unresolved-filter: none;
+    --link-unresolved-decoration-style: solid;
+    --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.5);
+    --link-underline-color: var(--accent-6-muted);
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Inline Title and Line Variables >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
+    --inline-title-style: normal;
+    --inline-title-margin-bottom: 0.75em;
+
+    --line-width: 40rem;
+    --line-height: 1.5;
+    --line-height-normal: var(--line-height);
+    --line-height-tight: 1.2; /* Tighter line height for compact text */
+
+    --max-width: 88%;
+    --max-col-width: 18em;
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Icon Styles >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
+    --icon-muted: 0.5;
+    --icon-color-hover: var(--color-purple-700);
+    --icon-color-active: var(--color-purple-700);
+    --icon-color-focused: var(--color-purple-700);
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Layout and Miscellaneous Sizing >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
+    --nested-padding: 1.1em;
+    --folding-offset: 32px;
+    --input-height: 32px;
+    --header-height: 40px;
+    --basic-border-color: var(--color-gray-50);
+    --thin-border: 1px solid var(--basic-border-color);
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Metadata Variables >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
+    --metadata-label-width: 9rem;
+    --metadata-label-font-size: var(--font-adaptive-small);
+    --metadata-input-font-size: var(--font-adaptive-small);
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Canvas Variables >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
     --canvas-background: var(--text-on-accent);
     --canvas-card-label-color: inherit;
     --canvas-dot-pattern: var(--dot-color);
@@ -652,1195 +1182,297 @@ body {
     --canvas-color-4: inherit;
     --canvas-color-5: inherit;
     --canvas-color-6: inherit;
-    --nav-item-size: var(--font-ui-medium);
-    --nav-item-color: var(--text-muted);
-    --nav-item-color-hover: var(--text-accent-hover);
-    --nav-item-color-active: var(--text-accent);
-    --nav-item-color-highlighted: var(--text-accent-hover);
-    --checkbox-radius: var(--radius-m);
-    --checkbox-size: 17px;
-    --checkbox-color: var(--secondary-accent);
-    --checkbox-color-hover: var(--hover-accent);
-    --checkbox-border-color: var(--text-gray);
-    --checkbox-border-color-hover: var(--hover-accent);
-    --checkbox-marker-color: var(--background-primary);
-    --checklist-done-decoration: line-through;
-    --checklist-done-color: var(--text-faint);
-    --callout-title-size: var(--ct-size);
-    --cb-width: 1.5px;
-    --callout-padding: var(--size-4-2);
-    --icon-color-hover: var(--hover-accent);
-    --icon-stroke: 2px;
-    --divider-color: var(--titlebar-background-focused);
-    --divider-color-hover: var(--ui1);
-    --divider-width: 2px;
-    --hr-color: var(--ui1);
-    --hr-thickness: 2px;
-    --file-line-width: 700px;
-    --list-indent: 1.6em; /* Horizontal indentaiton depth for nested items*/
-    --list-marker-color:var(--text-faint); /* List bullet color */
-    /*--list-numbered-style: ; */ /* list-style-type for numbered lists */
-    --link-unresolved-opacity: .8;
-    --code-background: var(--bg3);
-    --status-bar-font-size: var(--font-ui-small);
-    --metadata-input-font-size: var(--font-smallest);
-    --indentation-guide-width: 1.5px; /* The indentaiton line (or guide) width */
-    --indentation-guide-width-active: var(--indentation-guide-width);
-    --indentation-guide-color: var(--text-faint); /* Indentation line color (indentation for list marker) */
-    --indentation-guide-color-active: var(--indentation-guide-color); /* Active indentation line color (indentation for list marker) */
-    --nav-indentation-guide-color: var(--text-faint); /* Naviagation related indentation line color*/
-}
-
-
-/* ───────────────────────────────────────────────── */
-/* << Dataview
-──────────────────────────────────────────────────── */
-/* Styling from the "Tables" Section mostly applies */
-
-/* less indentation to save space */
-:is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
-    --list-indent: 1.2em;
-}
-
-.is-live-preview :is(.block-language-dataview, .block-language-dataviewjs) ul.contains-task-list {
-    padding-inline-start: 0;
-}
-
-:is(.block-language-dataview, .block-language-dataviewjs) .result-group {
-    padding-left: 0;
-}
-
-.result-group .dataview.task-list-item-checkbox {
-    margin-inline-start: 0.3em;
-}
-
-pre.dataview-error::before {
-    display: none;
-}
-
-pre.dataview-error::first-line {
-    color: var(--text-error);
-}
-
-/* Result counts */
-.dataview.small-text.small-text.small-text {
-    padding: 1px var(--size-2-1) 0;
-    margin-left: var(--size-4-2);
-    font-family: var(--font-monospace-theme);
-    font-size: 85%;
-    color: var(--text-normal);
-    background-color: var(--bg1);
-    border: var(--thin-border);
-    border-radius: var(--radius-s);
-}
-
-.dataview.small-text::before,
-.dataview.small-text::after {
-    display: none;
-}
-
-/* remove table hover, since redundant with hovers from this theme */
-body .dataview:not(.task-list-item-checkbox):hover {
-    cursor: default;
-    background: none;
-    box-shadow: none;
-}
-
-.dataview.table-view-table small {
-    font-size: 70%;
-}
-
-.is-live-preview .block-language-dataviewjs :is(h1, h2, h3, h4, h5, h6):first-child {
-    margin-top: 4px;
-}
-
-/* <<< dataview cssclasses */
-.remove-dataview-title :is(.block-language-dataview, .block-language-dataviewjs) h4 {
-    display: none;
-}
-
-
-/* =============================================
-
-                HEADER COLORS
-
-=============================================== */
-body.pln-hdcl {
-    --pln-hdcl-1: #BF616A;
-    --pln-hdcl-2: #D08770;
-    --pln-hdcl-3: #EBCB8B;
-    --pln-hdcl-4: #A3BE8C;
-    --pln-hdcl-5: #8FBCBB;
-    --pln-hdcl-6: #88C0D0;
-    --h1-color: var(--pln-hdcl-1);
-    --h2-color: var(--pln-hdcl-2);
-    --h3-color: var(--pln-hdcl-3);
-    --h4-color: var(--pln-hdcl-4);
-    --h5-color: var(--pln-hdcl-5);
-    --h6-color: var(--pln-hdcl-6);
-}
-
-
-
-.theme-light {
-    --a-row: #00000006;
-    --b-row: #00000013;
-    --search-match-color: var(--color-orange)
-}
-
-
-
-.theme-dark {
-    --a-row: #00000026;
-    --b-row: #0000004d;
-    --search-match-color: var(--color-yellow)
-}
-
-body .markdown-source-view .cm-math,
-body .markdown-preview-view .MJX-TEX {
-    font-size: var(--math-font-size)
-}
-
-
-
-body .markdown-source-view .cm-math {
-    font-family: var(--math-font)
-}
-
-
-/* -------------------------------------------
-
-        Live Preview Heading Level Indicator 
-        
-------------------------------------------- */
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
-    position: relative;
-    bottom: 1px;
-    left: -2px;
-    padding-right: 4px;
-    padding-left: 4px;
-    font-family: var(--font-monospace);
-    font-size: 0.8rem;
-    font-style: normal;
-    line-height: 1em;
-    color: var(--text-muted);
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-1::before {
-    content: "H1";
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-2::before {
-    content: "H2";
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-3::before {
-    content: "H3";
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-4::before {
-    content: "H4";
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-5::before {
-    content: "H5";
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-6::before {
-    content: "H6";
-}
-
-body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header::before {
-    display: none;
-    /* FIX only first header element gets the prefix */
-}
-
-
-/*=======================================
-            
-                 TABLE
-
-=======================================*/
-
-table :is(ul, ol) {
-    line-height: 1.1
-}
-
-
-
-.markdown-rendered table :is(ul, ol) {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-block: 0 !important
-}
-
-
-
-.markdown-preview-view table {
-    margin-top: .5em;
-    margin-bottom: 1.2em
-}
-
-
-
-.unrestricted-line-length-tables:not(.is-mobile) :is(.markdown-source-view, .markdown-preview-view):has(table, .HyperMD-table-2) {
-    --file-line-width: 100%
-}
-
-
-
-.is-live-preview.markdown-source-view.mod-cm6 .cm-embed-block:hover {
-    border-radius: 0
-}
-
-.markdown-source-view.mod-cm6 hr {
-    border-width: 2px
-}
-
-/* ------------------ Tag Styling ---------------- */
-
-.theme-light {
-    --annotation-tag-font-color: #212121
-}
-
-
-
-.theme-dark {
-    --annotation-tag-font-color: #fff
-}
-
-
-
-body:not(.annotation-tags-off) .tag:is([href=\#goal], [href=\#idea], [href=\#question], [href=\#gap], [href=\#main], [href=\#disagree], [href=\#summary], [href=\#agree], [href=\#example], [href=\#definition], [href=\#method], [href=\#data], [href=\#important], [href=\#quote], [href=\#todo], [href=\#critique], [href=\#sidenote], [href=\#litreview], [href=\#epistemic-break], [href=\#hypothesis]),
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
-    color: var(--text-normal);
-    white-space: nowrap;
-    border-radius: var(--tag-radius);
-    padding-left: 6px;
-    padding-right: 6px;
-    font-style: normal;
-    font-weight: 900
-}
-
-
-
-body:not(.annotation-tags-off) .longform-leaf .tag:is([href=\#goal], [href=\#idea], [href=\#question], [href=\#gap], [href=\#main], [href=\#disagree], [href=\#summary], [href=\#agree], [href=\#example], [href=\#definition], [href=\#method], [href=\#data], [href=\#important], [href=\#quote], [href=\#todo], [href=\#critique], [href=\#sidenote], [href=\#litreview], [href=\#epistemic-break], [href=\#hypothesis]),
-body:not(.annotation-tags-off) .longform-leaf .cm-s-obsidian .cm-line span:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
-    font-family: var(--longform-font-text-theme);
-    font-size: var(--longform-font-size)
-}
-
-
-
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-begin:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
-    white-space: nowrap;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    padding-right: 0
-}
-
-
-
-body:not(.annotation-tags-off) .cm-s-obsidian .cm-line .cm-hashtag-end:is(.cm-tag-litreview, .cm-tag-idea, .cm-tag-sidenote, .cm-tag-goal, .cm-tag-critique, .cm-tag-todo, .cm-tag-quote, .cm-tag-method, .cm-tag-data, .cm-tag-disagree, .cm-tag-gap, .cm-tag-summary, .cm-tag-definition, .cm-tag-question, .cm-tag-main, .cm-tag-agree, .cm-tag-important, .cm-tag-example, .cm-tag-epistemic-break, .cm-tag-hypothesis) {
-    font-family: var(--font-text);
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding-left: 0
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-gap, .tag[href=\#gap]),
-body:not(.annotation-tags-off) :is(.cm-tag-sidenote, .tag[href=\#sidenote]),
-body:not(.annotation-tags-off) :is(.cm-tag-epistemic-break, .tag[href=\#epistemic-break]),
-body:not(.annotation-tags-off) :is(.cm-tag-litreview, .tag[href=\#litreview]) {
-    background-color: #80808080
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-gap, .tag[href=\#gap]):after {
-    content: " 🕳"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-litreview, .tag[href=\#litreview]):after {
-    content: " 📚"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-epistemic-break, .tag[href=\#epistemic-break]):after {
-    content: " ⚡️"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-sidenote, .tag[href=\#sidenote]):after {
-    content: " ⬅️"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-question, .tag[href=\#question]),
-body:not(.annotation-tags-off) :is(.cm-tag-goal, .tag[href=\#goal]) {
-    background-color: #00999480
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-goal, .tag[href=\#goal]):after {
-    content: " 🏁"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-question, .tag[href=\#question]):after {
-    content: " ❓"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-critique, .tag[href=\#critique]) {
-    background-color: #cc338080
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-critique, .tag[href=\#critique]):after {
-    content: " ☝️"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-idea, .tag[href=\#idea]),
-body:not(.annotation-tags-off) :is(.cm-tag-quote, .tag[href=\#quote]) {
-    background-color: #93ff0580
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-idea, .tag[href=\#idea]):after {
-    content: " 🤔"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-quote, .tag[href=\#quote]):after {
-    content: " 💬"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-summary, .tag[href=\#summary]),
-body:not(.annotation-tags-off) :is(.cm-tag-important, .tag[href=\#important]) {
-    background-color: #ff780f80
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-summary, .tag[href=\#summary]):after {
-    content: " ✴️"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-important, .tag[href=\#important]):after {
-    content: " 📌"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-data, .tag[href=\#data]),
-body:not(.annotation-tags-off) :is(.cm-tag-method, .tag[href=\#method]) {
-    background-color: #aa794280
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-method, .tag[href=\#method]):after {
-    content: " 🔬"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-data, .tag[href=\#data]):after {
-    content: " 📊"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-hypothesis, .tag[href=\#hypothesis]),
-body:not(.annotation-tags-off) :is(.cm-tag-todo, .tag[href=\#todo]),
-body:not(.annotation-tags-off) :is(.cm-tag-main, .tag[href=\#main]) {
-    background-color: #209cee80
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-todo, .tag[href=\#todo]):after {
-    content: " ☑️"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-hypothesis, .tag[href=\#hypothesis]):after {
-    content: " ⏺"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-main, .tag[href=\#main]):after {
-    content: " 👉"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-definition, .tag[href=\#definition]) {
-    background-color: #d9bc4d80
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-definition, .tag[href=\#definition]):after {
-    content: " 💡"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-agree, .tag[href=\#agree]) {
-    background-color: #23d16080
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-agree, .tag[href=\#agree]):after {
-    content: " ✅"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-disagree, .tag[href=\#disagree]) {
-    background-color: #ff386080
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-disagree, .tag[href=\#disagree]):after {
-    content: " ⛔️"
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-tag-example, .tag[href=\#example]) {
-    background-color: #e680fd80
-}
-
-
-
-body:not(.annotation-tags-off) :is(.cm-hashtag-end.cm-tag-example, .tag[href=\#example]):after {
-    content: " ⚛️"
-}
-
-/* --------- Tag End ------------ */
-
-
-/* ----- Uncolor Bold and Italic ------- */
-.modal-container strong,
-.uncolored-bold:is(.theme-light, .theme-dark) {
-    --bold-color: var(--text-normal)
-}
-
-
-
-.modal-container em,
-.uncolored-italic:is(.theme-light, .theme-dark) {
-    --italic-color: var(--text-normal)
-}
-
-/* --------- Uncolor End --------------- */
-
-
-
-input[type=checkbox] {
-    border-width: 1.5px
-}
-
-
-
-.contains-task-list.contains-task-list {
-    --list-indent: 1.6em
-}
-
-
-
-body .cm-s-obsidian span.cm-formatting-task {
-    color: var(--text-gray)
-}
-
-/* --------- Footnote Styling --------- */
-
-.cm-footref.cm-footref.cm-footref.cm-footref,
-.footnotes li::marker,
-.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote.cm-hmd-footnote,
-.footnote-link {
-    color: var(--secondary-accent)
-}
-
-
-
-.cm-footref,
-.footnote-link {
-    text-rendering: geometricprecision;
-    font-weight: 600
-}
-
-
-
-body .HyperMD-footnote.cm-line.cm-line,
-.footnotes.footnotes li {
-    padding-top: var(--size-4-1);
-    padding-bottom: var(--size-4-1);
-    line-height: 1.2
-}
-
-
-
-.cm-line:not(.HyperMD-footnote)+.HyperMD-footnote.HyperMD-footnote,
-.footnotes hr {
-    padding-top: var(--size-4-3);
-    border-top: var(--basic-border)
-}
-
-
-
-.footnotes hr {
-    margin-top: 40px;
-    margin-bottom: 0
-}
-
-
-
-.cm-line.HyperMD-footnote.HyperMD-footnote {
-    padding-left: 0
-}
-
-
-
-.footnote-link:hover {
-    color: var(--text-accent-hover);
-    text-decoration: none
-}
-
-
-
-.footnote-backref {
-    margin-left: var(--size-2-1);
-    color: var(--text-gray);
-    font-family: Inter, sans-serif;
-    font-size: 90%;
-    text-decoration: none
-}
-
-
-/* ───────────────────────────────────────────────── */
-/* << Syntax Highlighting
-──────────────────────────────────────────────────── */
-/* increase readability */
-body.theme-light {
-    --color-cyan: hsl(179 60% 38%);
-}
-
- /* ---- Templater "<%" opening and "%>" closing "execution-tags" ----- */
-.theme-light .cm-s-obsidian .cm-templater-command.cm-templater-execution-tag {
-    color: hsl(66 100% 33%);
-}
-
-
-/* ---------------- Buttons ------------- */
-/* From Kepano's Minimal Theme */
-body.theme-dark .button-default,
-body.theme-light .button-default {
-    border: none;
-    box-shadow: none;
-    height: var(--input-height);
-    background: var(--background-modifier-hover);
-    color: var(--text-normal);
-    font-size: revert;
-    font-weight: 500;
-    transform: none;
-    transition: all .1s linear;
-    padding: 0 20px
-}
-
-body.theme-dark .button-default:hover,
-body.theme-light .button-default:hover {
-    border: none;
-    background: var(--background-modifier-border-hover);
-    box-shadow: none;
-    transform: none;
-    transition: all .1s linear
-}
-
-body.theme-dark .button-default:active,
-body.theme-dark .button-default:focus,
-body.theme-light .button-default:active,
-body.theme-light .button-default:focus {
-    box-shadow: none
-}
-
-body .button-default.blue {
-    background-color: var(--color-blue) !important
-}
-
-.button-default.red {
-    background-color: var(--color-red) !important
-}
-
-.button-default.green {
-    background-color: var(--color-green) !important
-}
-
-.button-default.yellow {
-    background-color: var(--color-yellow) !important
-}
-
-.button-default.purple {
-    background-color: var(--color-purple) !important
-}
-
-/*===================================
-       
-      CALLOUT STYLE SETTINGS
-
-====================================*/
-.callout {
-    --callout-icon: triangle;
-    --icon-stroke: 2px;
-    --sidenote-callout-width: 35%;
-    --callout-border-width: var(--cb-width);
-    --callout-padding: 0;
-    --callout-radius: var(--radius-s);
-    --callout-blend-mode: var(--highlight-mix-blend-mode);
-    --callout-title-size: inherit;
-    --background-color: rgb(var(--callout-color), 11%)
-}
-
-.callout :is(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--font-interface)
-}
-
-.HyperMD-callout.HyperMD-callout.HyperMD-callout.HyperMD-callout {
-    padding-top: var(--size-2-1);
-    padding-bottom: var(--size-2-1);
-    background-color: var(--bg4);
-    font-weight: 700
-}
-
-.cm-hmd-callout.cm-hmd-callout.cm-hmd-callout {
-    color: var(--secondary-accent);
-    opacity: .8
-}
-
-.callout-title {
-    letter-spacing: .8px;
-    background-color: rgb(var(--callout-color), 15%);
-    border-bottom: var(--callout-border-width)solid rgb(var(--callout-color), var(--callout-border-opacity));
-    padding: 2px 8px 3px
-}
-
-.callout-content {
-    padding: 2px 8px
-}
-
-.callout-title-inner,
-.callout-icon {
-    margin-right: var(--size-2-3)
-}
-
-.callout-title,
-body .callout-icon .svg-icon {
-    /*color: var(--text-muted);*/
-    /* ??? I need to figure out why this is even here... */
-    stroke-width: 3px
-}
-
-.callout-content :is(ul, p, ol) {
-    margin: 6px 0;
-    line-height: 1.4em
-}
-
-.callout-content li {
-    margin: 5px 0;
-    line-height: 1.1em
-}
-
-.callout-content.callout-content ul {
-    margin-top: 5px;
-    padding-left: 20px
-}
-
-.callout-content p+p {
-    margin-top: 12px
-}
-
-.callout ol {
-    margin-top: var(--size-4-1);
-    margin-bottom: 0;
-    padding-inline-start: 1.85em
-}
-
-.callout ol li::marker {
-    color: var(--text-gray)
-}
-
-.callout.callout.callout :is(code, pre) {
-    background-color: var(--bg1)
-}
-
-body .callout ul.contains-task-list {
-    padding-inline-start: 1.5em
-}
-
-.callout .task-list-item-checkbox {
-    width: 1em;
-    height: 1em;
-    margin-bottom: 0;
-    top: -2px
-}
-
-.callout[data-callout^=attachment],
-.callout[data-callout^=file] {
-    --callout-icon: paperclip;
-    --callout-color: 255, 90, 143
-}
-
-.callout[data-callout^=URL i] {
-    --callout-icon: link;
-    --callout-color: 255, 240, 143
-}
-
-.callout[data-callout^=URL i] .callout-title {
-    text-transform: uppercase
-}
-
-.callout[data-callout^=warn] {
-    --callout-icon: lucide-alert-triangle;
-    --callout-color: var(--callout-warning)
-}
-
-/* =============================================
-
-          Callout Card Styling
-
-============================================= */
-.callouts-card .callout {
-    margin: 13px 0px;
-    border-radius: var(--radius-s);
-    box-shadow: var(--shadow-s);
-    background-color: transparent;
-    padding: 0px;
-    --callout-border-width: 1px;
-    --callout-padding: 0;
-}
-
-.callouts-card .callout .callout-title {
-    background-color: rgba(var(--callout-color), 0.2);
-    padding: 2px 8px 10px;
-    min-width: 100%;
-}
-
-.callouts-card .callout-content .callout {
-    padding: 2px 8px;
-}
-
-
-/* ----------------------------------------
-
-        OUTLINED CALLOUT STYLING
-
------------------------------------------ */
-.is-live-preview.is-readable-line-width>.cm-callout .callout {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.callouts-outlined .callout .callout-title {
-    background-color: var(--background-primary);
-    margin-top: -24px;
-    z-index: 200;
-    width: fit-content;
-    padding: 0 .5em;
-    margin-left: -.75em;
-    letter-spacing: .05em;
-    font-variant-caps: all-small-caps;
-}
-
-.callouts-outlined .callout {
-    overflow: visible;
-    --callout-border-width: 1px;
-    --callout-border-opacity: 0.5;
-    --callout-title-size: 0.8em;
-    --callout-blend-mode: normal;
-    background-color: transparent;
-}
-
-.callouts-outlined .cm-embed-block.cm-callout {
-    padding-top: 12px
-}
-
-.callouts-outlined .callout-content .callout {
-    margin-top: 18px
-}
-
-/* ------------------------------
 
-        Gutter Element Styling
+    --top-left-padding-y: 0px;
+    --image-muted: 0.7;
+    --image-radius: 4px;
+    --heading-spacing: 2em;
+    --p-spacing: 1.75rem;
+    --footnote-color: var(--color-base-50);
+    --footnote-border: 1px solid;
+    --border-width: 1px;
+}
+
+/* 
+───────────────────────────────────────────────────────────
+* << Mobile Sidebar >>
+─────────────────────────────────────────────────────────── 
+*/
 
----------------------------------*/
 body {
-    --line-number-color: var(--text-faint);
-    --line-number-color-active: var(--text-muted)
+	--mobile-left-sidebar-width: 280pt;
+    --mobile-right-sidebar-width: 240pt;
 }
 
-.markdown-source-view.mod-cm6 .cm-gutters {
-    color: var(--line-number-color) !important
+/* 
+───────────────────────────────────────────────────────────
+* << Theme-Specific Font and Link Variables >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    /* Relative font sizes */
+    --font-smallest: 0.8em;
+    --font-smaller: 0.875em;
+    --font-smallish: 0.89em;
+    --font-small: 0.933em;
+    --font-body: 1em;
+    --font-big: 1.15em; /* A slightly larger font size for sidebars */
+
+    /* UI font sizes */
+    --font-ui-smaller: 13px;
+    --font-ui-small: 14px;
+    --font-ui-medium: 16px;
+    --font-ui-large: 24px;
+
+    /* Font weights */
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+
+    /* Bold Text */
+    --bold-weight: var(--font-bold);
+    --bold-color: var(--color-yellowish-355);
+    --bold-italic-color: var(--color-gray-10);
+
+    /* Link Styles */
+    --link-color: var(--color-magenta-700);
+    --link-color-hover: var(--color-magenta-700);
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --link-external-color: var(--color-magenta-700);
+    --link-external-color-hover: var(--color-magenta-700);
+    --link-external-decoration: none;
+    --link-external-decoration-hover: none;
+    --link-external-filter: none;
+    --link-unresolved-color: var(--color-magenta-700);
+    --link-unresolved-opacity: 0.65;
+    --link-unresolved-filter: none;
+    --link-unresolved-decoration-style: solid;
+    --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.5);
 }
 
-.markdown-source-view.mod-cm6 .cm-editor .cm-gutterElement.cm-active .cm-heading-marker,
-.markdown-source-view.mod-cm6 .cm-editor .cm-lineNumbers .cm-gutterElement.cm-active {
-    color: var(--line-number-color-active)
+/* 
+───────────────────────────────────────────────────────────
+* << Code Styles >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
+    --code-size: var(--font-smaller);
+    --code-background: var(--background-primary-alt);
+    --code-normal: #F8F8F2; /* Formerly var(--color-slate-500) */
+    --code-comment: var(--color-gray-15);
+    --code-punctuation: var(--color-slate-900);
+    --code-tag: var(--color-magenta-300);
+    --code-value: var(--color-cyan-300);
+    --code-string: var(--color-green-500);
+    --code-property: var(--color-yellow-310);
+    --code-function: var(--color-magenta-300);
+    --code-keyword: var(--color-purple-910);
+    --code-important: var(--color-slate-300);
 }
 
-.cm-editor .cm-lineNumbers {
-    background-color: var(--gutter-background)
+/* 
+───────────────────────────────────────────────────────────
+* << Font Families >>
+─────────────────────────────────────────────────────────── 
+*/
+
+:root {
+    --default-font: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+    --font-code: "Monaco", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    --font-monospace-1: "Monaco", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    --font-monospace-2: "JetBrains Mono", "Fira Code", Courier, monospace;
+    --font-monospace-3: "Monaco", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    --font-mono: "DM Mono", "Fira Code", Courier, monospace;
+    --font-sans: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', Helvetica, Arial, sans-serif;
+    --font-sans-1: "Avenir Next", "Inter", -apple-system BlinkMacSystemFont, "Segoe UI", "Ubuntu", Helvetica, Arial, sans-serif;
+    --font-sans-2: "Abril Text", "Inter", -apple-system BlinkMacSystemFont, "Segoe UI", "Ubuntu", Helvetica, Arial, sans-serif;
+
+    /* Theme Specific Font Variables */
+    --font-interface-theme: var(--font-sans);
+    --font-text-theme: var(--font-sans);
+    --font-monospace-theme: var(--font-mono);
+    --font-preview: var(--font-sans-2);
+    --font-editor: var(--font-sans-2);
+    --font-header: var(--font-sans-2);
+    --default-font: var(--font-sans-2);
+    --mermaid-font: var(--font-sans-2);
+    --reveal-font: var(--font-sans-2);
 }
 
-.cm-editor .cm-lineNumbers .cm-gutterElement {
-    min-width: var(--folding-offset);
-    padding-inline-end: 0.5em
+/* 
+───────────────────────────────────────────────────────────
+* << Font Weights >>
+─────────────────────────────────────────────────────────── 
+*/
+
+:root {
+    --font-thin: 100;
+    --font-extra-light: 200;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 800;
+    --font-extra-bold: 900;
 }
 
-.is-rtl .cm-editor .cm-lineNumbers .cm-gutterElement {
-    text-align: left
+/* 
+───────────────────────────────────────────────────────────
+* << Typographic Scale >>
+─────────────────────────────────────────────────────────── 
+*/
+
+:root {
+    --line-width: 42em;
+    --font-scale-000: 0.625rem;
+    --font-scale-00: 0.75rem;
+    --font-scale-0: 0.875rem;
+    --font-scale-1: 1rem;
+    --font-scale-2: 1.125rem;
+    --font-scale-3: 1.375rem;
+    --font-scale-4: 1.625rem;
+    --font-scale-5: 1.75rem;
+    --font-scale-6: 2rem;
+    --font-scale-7: 2.25rem;
+    --font-scale-8: 2.5rem;
+    --font-scale-9: 2.625rem;
+    --font-scale-10: 3rem;
 }
 
-@media (max-width:400pt) {
-    .cm-editor .cm-lineNumbers .cm-gutterElement {
-        padding-inline-end: 4px;
-        padding-inline-start: 8px
-    }
+/* 
+───────────────────────────────────────────────────────────
+* << Tracking (Letter Spacing) >>
+─────────────────────────────────────────────────────────── 
+*/
+
+:root {
+    --tracking-0: 0px;
+    --tracking-1: 0.16px;
+    --tracking-2: 0.32px;
+    --tracking-3: 0.64px;
+    --tracking-4: 1.28px;
+    --tracking-5: 2.56px;
 }
 
-.cm-editor .cm-lineNumbers .cm-gutterElement {
-    font-variant-numeric: tabular-nums
+/* 
+───────────────────────────────────────────────────────────
+* << Layout Sizing >>
+─────────────────────────────────────────────────────────── 
+*/
+
+:root {
+    --scale-0-0: 0px;
+    --scale-2-1: 2px;
+    --scale-2-2: 4px;
+    --scale-2-3: 6px;
+    --scale-2-4: 8px;
+    --scale-2-5: 10px;
+    --scale-2-6: 12px;
+    --scale-2-8: 16px;
+    --scale-2-9: 18px;
+    --scale-2-10: 20px;
+    --scale-2-18: 36px;
+    --scale-8-1: 8px;
+    --scale-8-2: 16px;
+    --scale-8-3: 24px;
+    --scale-8-4: 32px;
+    --scale-8-5: 40px;
+    --scale-8-6: 48px;
+    --scale-8-7: 54px;
+    --scale-8-8: 64px;
+    --scale-8-9: 72px;
+    --scale-8-10: 80px;
+    --scale-8-12: 96px;
+    --scale-8-18: 144px;
+    --scale-8-36: 288px;
 }
 
-.cm-editor .cm-gutterElement.cm-active .cm-heading-marker,
-.cm-editor .cm-lineNumbers .cm-gutterElement.cm-active {
-    color: var(--text-muted)
+/* 
+───────────────────────────────────────────────────────────
+* << Transitions & Animations >>
+─────────────────────────────────────────────────────────── 
+*/
+
+:root {
+    --motion-smooth: cubic-bezier(0.65, 0.05, 0.36, 1);
+    --motion-delay: cubic-bezier(0.86, 0, 0.07, 1);
+    --motion-heavy: cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
-.active-line-on .cm-line.cm-active,
-.active-line-on .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote.cm-active {
-    background-color: var(--active-line-bg);
-    box-shadow: -25vw 0 var(--active-line-bg), 25vw 0 var(--active-line-bg)
+/* 
+───────────────────────────────────────────────────────────
+* << Size Variables >>
+─────────────────────────────────────────────────────────── 
+* Note: The --size variables are not intended to be changed.
+*/
+
+body {
+    --size-2-1: 2px;
+    --size-2-2: 4px;
+    --size-2-3: 6px;
+    --size-4-1: 4px;
+    --size-4-2: 8px;
+    --size-4-3: 12px;
+    --size-4-4: 16px;
+    --size-4-5: 20px;
+    --size-4-6: 24px;
+    --size-4-8: 32px;
+    --size-4-12: 48px;
+    --size-4-16: 64px;
+    --size-4-18: 72px;
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --radius-l: 10px;
 }
 
-/* the highlight + border option */
-.active-line-on .cm-line.cm-active,
-.current-line-border .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote.cm-active {
-    border-left: 2px solid var(--interactive-accent);
-    margin-left: -2px !important;
-    background-color: var(--active-line-bg);
-    box-shadow: -25vw 0 var(--active-line-bg), 25vw 0 var(--active-line-bg)
+/* 
+───────────────────────────────────────────────────────────
+* << Miscellaneous Variables >>
+─────────────────────────────────────────────────────────── 
+*/
+
+body {
+    --math-font: var(--font-monospace);
+    --math-font-size: 1em;
+    --heading-letter-spacing: 1.5px;
+    --longform-font-size: 1.3rem;
+    --longform-base-line-height: 1;
+    --longform-letter-spacing: 0px;
+    --inactive-pane-opacity: 75%;
+    --transition-delay-passing-over-protection: 0.2s;
 }
 
+/* 
+───────────────────────────────────────────────────────────
+* << Platform Specific Styles >>
+─────────────────────────────────────────────────────────── 
+*/
 
-
-/* -------- Gutter Styling End ------- */
-
-
-
-/* ---------- Canvas ------------ */
-
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type=canvas] .view-header-title-container {
-    top: 22rem
+/* ──────── MacOS Specific Padding ───────── */
+.mod-macos {
+	--top-left-padding-y: 24px;
 }
 
-
-
-body:not(.normal-header-bar, .is-mobile) .workspace-leaf-content[data-type=canvas] :is(.view-header .view-actions, .view-header-title-container) {
-    margin-right: .4rem
+/* ──────── Phone Specific Font Sizes ─────── */
+.is-phone {
+	--metadata-label-font-size: var(--font-adaptive-smaller);
+	--metadata-input-font-size: var(--font-adaptive-smaller);
 }
 
-
-
-body:not(.normal-header-bar, .is-mobile) .canvas-controls {
-    top: 3rem
-}
-
-
-
-body .canvas-card-menu {
-    right: -4rem;
-    left: unset
-}
-
-
-
-.canvas-node :is(h1, h2, h3, h4, h5, h6, .cm-header) {
-    font-family: var(--font-canvas-cards-heading-theme);
-    font-style: normal;
-    font-weight: 500
-}
-
-
-
-.centered-canvas-notes .canvas-node-content.markdown-embed {
-    text-align: center
-}
-
-
-
-body:not(.show-search-pane-suggestions) .mod-search-suggestion {
-    display: none
-}
-
-.document-search-container {
-    border-bottom: var(--thin-border);
-    box-shadow: var(--shadow-s);
-    margin-left: 0;
-    margin-right: 0
-}
-
-body:not(.show-close-buttons) .document-search-close-button {
-    display: none
-}
-
-
-/*----------------------------------
-
-       Highlight current line
-
-------------------------------------*/
-.anp-current-line .markdown-source-view .cm-active.cm-line {
-    background-color: rgba(var(--ctp-surface1), 0.4);
-}
-
-
-/* Targets active line bg & border */
-.anp-current-line-border .markdown-source-view .cm-active.cm-line { 
-    border-left: 2px solid var(--interactive-accent);
-    margin-left: -2px !important;
-    background-color: rgba(var(--ctp-surface1), 0.4);
-}
-
-
-/* Only creates a line-border for the active line */
-.anp-current-line-border-only .markdown-source-view .cm-active.cm-line::before { 
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -1.5rem;
-    width: 2px;
-    background-color: rgba(var(--interactive-accent-rgb), 0.3);
-}
-
-.anp-current-line-border-only .markdown-source-view .cm-focused .cm-active.cm-line::before {
-    background-color: var(--interactive-accent);
-}
-
-
-/*------------------------------------------
-
-              header dividers
-
--------------------------------------------*/
-.anp-h1-divider .markdown-rendered h1,
-.anp-h1-divider .HyperMD-header-1 {
-    border-bottom: var(--hr-thickness) solid var(--background-modifier-border);
-    padding-bottom: 2px;
-}
-
-.anp-h1-divider.anp-header-divider-color-toggle .markdown-rendered h1,
-.anp-h1-divider.anp-header-divider-color-toggle .HyperMD-header-1 {
-    border-bottom-color: currentColor;
-}
-
-.anp-h2-divider .markdown-rendered h2,
-.anp-h2-divider .HyperMD-header-2 {
-    border-bottom: var(--hr-thickness) solid var(--background-modifier-border);
-    padding-bottom: 2px;
-}
-
-.anp-h2-divider.anp-header-divider-color-toggle .markdown-rendered h2,
-.anp-h2-divider.anp-header-divider-color-toggle .HyperMD-header-2 {
-    border-bottom-color: currentColor;
-}
-
-.anp-h3-divider .markdown-rendered h3,
-.anp-h3-divider .HyperMD-header-3 {
-    border-bottom: var(--hr-thickness) solid var(--background-modifier-border);
-    padding-bottom: 2px;
-}
-
-.anp-h3-divider.anp-header-divider-color-toggle .markdown-rendered h3,
-.anp-h3-divider.anp-header-divider-color-toggle .HyperMD-header-3 {
-    border-bottom-color: currentColor;
-}
-
-.anp-h4-divider .markdown-rendered h4,
-.anp-h4-divider .HyperMD-header-4 {
-    border-bottom: var(--hr-thickness) solid var(--background-modifier-border);
-    padding-bottom: 2px;
-}
-
-.anp-h4-divider.anp-header-divider-color-toggle .markdown-rendered h4,
-.anp-h4-divider.anp-header-divider-color-toggle .HyperMD-header-4 {
-    border-bottom-color: currentColor;
-}
-
-.anp-h5-divider .markdown-rendered h5,
-.anp-h5-divider .HyperMD-header-5 {
-    border-bottom: var(--hr-thickness) solid var(--background-modifier-border);
-    padding-bottom: 2px;
-}
-
-.anp-h5-divider.anp-header-divider-color-toggle .markdown-rendered h5,
-.anp-h5-divider.anp-header-divider-color-toggle .HyperMD-header-5 {
-    border-bottom-color: currentColor;
-}
-
-.anp-h6-divider .markdown-rendered h6,
-.anp-h6-divider .HyperMD-header-6 {
-    border-bottom: var(--hr-thickness) solid var(--background-modifier-border);
-    padding-bottom: 2px;
-}
-
-.anp-h6-divider.anp-header-divider-color-toggle .markdown-rendered h6,
-.anp-h6-divider.anp-header-divider-color-toggle .HyperMD-header-6 {
-    border-bottom-color: currentColor;
-}
-
-
-/*---------------------------------------
-------------------FOLDER COLORS----------------------*/
-/* https://forum.obsidian.md/t/iterative-rainbow-folder-colors-css/21066 */
-/* thanks to Evelf */
-
-.tree-item-children {
-    --nav-indentation-guide-width: 3px;
-    border-bottom-left-radius: 5px;
-}
-
-.mod-root>.nav-folder-children>.nav-folder>.tree-item-self,
-.mod-root>.nav-folder-children>.is-collapsed .collapse-icon svg.svg-icon,
-.mod-root .nav-folder .collapse-icon svg.svg-icon {
-    color: var(--b0);
-}
-
-.mod-root .nav-folder .nav-folder-children .collapse-icon svg.svg-icon {
-    color: var(--nav-collapse-icon-color);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+2)>.tree-item-self {
-    background-color: var(--color-red-2);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+2) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-red-2);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+3)>.tree-item-self {
-    background-color: var(--color-orangee);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+3) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-orangee);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+4)>.tree-item-self {
-    background-color: var(--color-yellow-light);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+4) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-yellow-light);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+5)>.tree-item-self {
-    background-color: var(--color-dank);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+5) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-dank);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+6)>.tree-item-self {
-    background-color: var(--color-sea-green);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+6) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-sea-green);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+7)>.tree-item-self {
-    background-color: var(--color-cyan);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+7) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-cyan);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+8)>.tree-item-self {
-    background-color: var(--color-frost);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+8) .tree-item-children {
-    border-left: 3px solid var(--color-frost);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+9)>.tree-item-self {
-    background-color: var(--color-mild-blue);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+9) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-mild-blue);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+10)>.tree-item-self {
-    background-color: var(--color-mid-purple);
-}
-
-.mod-root>.nav-folder-children>.nav-folder:nth-child(9n+10) .tree-item-children {
-    --nav-indentation-guide-color: var(--color-mid-purple);
-}
-
-body:not(.show-vault-in-file-explorer) .nav-folder.mod-root>.nav-folder-title {
-    display: none
-}
-
-.mod-root>.nav-folder-title {
-    background-color: var(--bg2);
-    border-bottom: var(--basic-border);
-    display: flex
-}
-
-.mod-root>.nav-folder-title>.nav-folder-title-content {
-    font-size: var(--nav-item-size);
-    font-weight: 600
-}
-
-body:not(.no-alternating-rows) .nav-folder:nth-child(odd)>.nav-folder-title,
-body:not(.no-alternating-rows) .nav-file:nth-child(odd) {
-    background-color: var(--a-row)
-}
-
-body:not(.show-file-explorer-navigation) .workspace-leaf-content[data-type=file-explorer] :is(.nav-buttons-container, .nav-header),
-.hide-attachment-folders .nav-folder-title:is([data-path$=\/attachments i], [data-path=attachments i]) {
-    display: none
+/* ──────── High DPI Screen Adjustments ─────── */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	.is-phone {
+		--border-width: 0.75px;
+	}
 }
 
