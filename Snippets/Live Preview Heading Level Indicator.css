@@ -1,0 +1,51 @@
+/*
+──────────────────────────────────────────────────────────────────
+   SUBSECTION: Live Preview Heading Level Indicator
+──────────────────────────────────────────────────────────────────
+
+   * Adds indicators for heading levels (H1-H6) in live preview mode,
+   * providing clear visual cues for document structure.
+
+──────────────────────────────────────────────────────────────────
+*/
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header::before {
+    position: relative;
+    bottom: 1px;
+    left: -2px;
+    padding: 0 4px;
+    font-family: var(--font-monospace);
+    font-size: 0.8rem;
+    font-style: normal;
+    line-height: 1em;
+    color: var(--text-muted);
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-1::before {
+    content: "H1";
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-2::before {
+    content: "H2";
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-3::before {
+    content: "H3";
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-4::before {
+    content: "H4";
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-5::before {
+    content: "H5";
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-line:not(.cm-active)>.cm-header-6::before {
+    content: "H6";
+}
+
+body:not(.no-lp-heading-level-indicator) .is-live-preview .cm-header~.cm-header::before {
+    /* Ensure only the first header element gets the prefix */
+    display: none;
+}
