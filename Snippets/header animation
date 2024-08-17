@@ -1,0 +1,68 @@
+/*
+──────────────────────────────────────────────────────────────────
+   SUBSECTION: Smooth Header Animation
+──────────────────────────────────────────────────────────────────
+
+   * Applies a smooth animation effect when hovering over headers,
+   * creating a dynamic user experience.
+──────────────────────────────────────────────────────────────────
+*/
+
+@keyframes indent {
+    from {
+        transform: translateX(calc(-1 * var(--header-offset)));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes outdent {
+    from {
+        transform: translateX(var(--header-offset)));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.is-live-preview .cm-widgetBuffer+.cm-header {
+    display: inline-block;
+    animation: outdent 275ms ease-out;
+}
+
+.is-live-preview .cm-widgetBuffer+.cm-header.cm-formatting {
+    animation: opac 275ms ease-in;
+}
+
+.is-live-preview .cm-active .cm-header+.cm-header {
+    display: inline-block;
+    animation: indent 275ms ease-out;
+}
+
+.cm-header-1 {
+    --header-offset: 2rem;
+}
+
+.cm-header-2 {
+    --header-offset: 3rem;
+}
+
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+    --header-offset: 3rem;
+}
