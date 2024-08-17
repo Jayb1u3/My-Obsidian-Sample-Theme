@@ -1,383 +1,598 @@
-/* ───────────────────────────────────────────────── */
-/* << Code
-──────────────────────────────────────────────────── */
-/* styling of code in general */
+/*
+──────────────────────────────────────────────────────────────────
+ * SECTION: CODE STYLING
+──────────────────────────────────────────────────────────────────
+*/
+
+body.theme-dark.lyt-alt {
+	--secondary-accent: var(--code-normal);
+}
+
+/* Main Properties */
+.theme-dark code[class*="language-"],
+.theme-dark pre[class*="language-"] {
+	background: var(--bg3);
+	color: #f8f8f2;
+	font-family: "SF Mono", Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+	font-weight: 600;
+	/* white-space: pre; */
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+	/* The default is 4, but you could change it if you really, really want to */
+	tab-size: 2;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+/* What the code looks like when highlighted */
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection {
+	background: rgba(146, 146, 175, 0.164);
+	/* changes background color */
+	color: unset;
+	/* changes color of the highlighted text */
+}
+
+/* Properties specific to code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	/* this is standard */
+	margin: 0.5em 0;
+	/* this is the default */
+	overflow: auto;
+	/* this is standard */
+	border-radius: 5px;
+	/* make codeblock edges round */
+}
+
+/* General styling for code elements */
 
 .markdown-preview-view.markdown-preview-view :is(pre, code),
 .cm-s-obsidian .HyperMD-codeblock,
 .cm-inline-code {
-    --codeblock-border: var(--thin-muted-border);
-    --codeblock-roundness: var(--radius-s);
-    --code-block-alt-bg: var(--bg5);
-    --slight-code-roundish: var(--radius-xs);
+	--codeblock-border: var(--thin-muted-border);
+	/* Border for code blocks */
+	--codeblock-roundness: var(--radius-s);
+	/* Border radius for code blocks */
+	--code-block-alt-bg: var(--bg5);
+	/* Alternative background color for code blocks */
+	--slight-code-roundish: var(--radius-xs);
+	/* Slight border radius for inline code */
 }
 
-/* ───────────────────────────────────────────────── */
-/* <<< Inline Code
-──────────────────────────────────────────────────── */
+/*
+──────────────────────────────────────────────────────────────────
+ * SECTION: INLINE CODE
+──────────────────────────────────────────────────────────────────
 
-/* "*:not(pre) > code" targets inline code
-(i.e. code that is not in a pre (= block) ) */
-.is-live-preview code,
-body .markdown-preview-view *:not(pre)>code,
-.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
-    color: var(--inline-code-color);
-    background-color: var(--bg2);
-    /* more distinduishable from background */
+ * Styling for inline code elements.
+
+ * Targets inline code within live preview, markdown preview, 
+   and code editor.
+
+──────────────────────────────────────────────────────────────────
+*/
+
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: Light Theme Specific Styles
+──────────────────────────────────────────────────────────────────
+*/
+
+.theme-dark.lyt-alt .is-live-preview code,
+.theme-dark.lyt-alt body .markdown-preview-view *:not(pre)>code,
+.theme-dark.lyt-alt .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+	color: var(--code-normal);
+	background-color: var(--bg2);
+	/* more distinguishable from background */
 }
+
+/* 
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: Dark Theme Specific Styles
+──────────────────────────────────────────────────────────────────
+*/
+
+.theme-dark .is-live-preview code,
+.theme-dark body .markdown-preview-view *:not(pre)>code,
+.theme-dark .cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
+	color: var(--inline-code-color);
+	background-color: var(--bg2);
+	/* more distinguishable from background */
+}
+
 
 .is-live-preview code,
 .markdown-preview-view *:not(pre)>code {
-    border-radius: var(--slight-code-roundish);
+	border-radius: var(--slight-code-roundish);
 }
 
 .is-live-preview code,
 .markdown-source-view .cm-line .cm-inline-code:not(.cm-formatting-code),
 .markdown-preview-view *:not(pre)>code {
-    background-color: var(--bg2);
+	background-color: var(--bg2);
 }
 
 /* interaction with headers with bg */
 body:not(.no-heading-bg) .markdown-source-view .cm-line .cm-inline-code.cm-header.cm-header.cm-header {
-    background-color: unset;
+	background-color: unset;
 }
 
-/* interaction with blockquotes */
+/* Inline code within blockquotes */
 .markdown-preview-view blockquote>*:not(pre)>code,
 .cm-quote.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code.cm-inline-code {
-    background-color: var(--bg3);
+	background-color: var(--bg3);
+	/* Background color for inline code in blockquotes */
 }
 
+/* Inline code padding and background */
 .cm-inline-code {
-    padding: 1px 0;
-    background-color: var(--bg2);
-    border-radius: var(--slight-code-roundish);
+	padding: 1px 0;
+	/* Padding for inline code */
+	background-color: var(--bg2);
+	/* Background color for inline code */
+	border-radius: var(--slight-code-roundish);
+	/* Border radius for inline code */
 }
 
-/* inline code surrounded by backticks */
+/* Styling for opening and closing backticks around inline code */
 .cm-formatting-code+.cm-inline-code:not(.cm-formatting-code) {
-    border-radius: 0;
+	border-radius: 0;
+	/* No border radius for inline code next to opening backtick */
 }
 
-/* opening backtick */
 .cm-formatting-code.cm-formatting-code {
-    border-radius: var(--slight-code-roundish) 0 0 var(--slight-code-roundish);
+	border-radius: var(--slight-code-roundish) 0 0 var(--slight-code-roundish);
+	/* Border radius for opening backtick */
 }
 
-/* closing backtick */
 .cm-inline-code:not(.cm-formatting-code)+.cm-formatting-code {
-    border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
+	border-radius: 0 var(--slight-code-roundish) var(--slight-code-roundish) 0;
+	/* Border radius for closing backtick */
 }
 
-/* live preview */
+/* Inline code in live preview */
 .is-live-preview .cm-active .cm-inline-code:not(.cm-formatting-code) {
-    border-radius: 0;
+	border-radius: 0;
+	/* No border radius for active inline code in live preview */
 }
 
-/* ───────────────────────────────────────────────── */
-/* <<< Code Blocks
-──────────────────────────────────────────────────── */
-/* templater code gets same size as code blocks */
+/*
+──────────────────────────────────────────────────────────────────
+ * SECTION: Code Blocks
+────────────────────────────────────────────────────────────────── 
+
+*  Styling for code blocks in various modes.
+*  Includes edit mode, live preview, and reading mode.
+
+──────────────────────────────────────────────────────────────────
+*/
+
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: TEMPLATER CODE STYLING
+────────────────────────────────────────────────────────────────── 
+
+*  Styling for inline Templater 
+
+──────────────────────────────────────────────────────────────────
+*/
+
+/* Templater code block font size */
 .cm-templater-command.cm-templater-command {
-    font-size: var(--code-size);
+	font-size: var(--code-size);
+	/* Font size for Templater commands */
 }
 
-/* Code blocks in Edit Mode */
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: CODE BLOCKS
+────────────────────────────────────────────────────────────────── 
+
+ * Code blocks in Edit Mode 
+ 
+──────────────────────────────────────────────────────────────────
+*/
+
 :is(.HyperMD-codeblock-end, .HyperMD-codeblock-begin) .cm-formatting-code-block {
-    color: var(--text-muted);
+	color: var(--text-muted);
+	/* Color for code block formatting in edit mode */
 }
 
 .cm-s-obsidian .HyperMD-codeblock {
-    line-height: 1.4em;
+	line-height: 1.4em;
+	/* Line height for code blocks */
 }
 
 body .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-    padding-left: var(--size-2-2);
+	padding-left: var(--size-2-2);
+	/* Padding for code blocks in source view */
 }
 
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: CODE BLOCKS - BG & Border Styling
+────────────────────────────────────────────────────────────────── 
+
+* Background and border styling for code blocks
+* Also Styling for top of block 
+
+──────────────────────────────────────────────────────────────────
+*/
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-    background-color: var(--code-block-alt-bg);
-    border: var(--codeblock-border);
-    border-bottom: none;
-    border-top-left-radius: var(--codeblock-roundness);
-    border-top-right-radius: var(--codeblock-roundness);
+	background-color: var(--code-block-alt-bg);
+	/* Background color for the beginning of code blocks */
+	border: var(--codeblock-border);
+	border-bottom: none;
+	/* No border at the bottom */
+	border-top-left-radius: var(--codeblock-roundness);
+	border-top-right-radius: var(--codeblock-roundness);
 }
 
+/* Bottom of the Codeblock */
 .cm-s-obsidian div.HyperMD-codeblock-end-bg {
-    border-bottom: var(--codeblock-border);
-    border-bottom-right-radius: var(--codeblock-roundness);
-    border-bottom-left-radius: var(--codeblock-roundness);
+	border-bottom: var(--codeblock-border);
+	/* Bottom border for the end of code blocks */
+	border-bottom-right-radius: var(--codeblock-roundness);
+	border-bottom-left-radius: var(--codeblock-roundness);
 }
 
 div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
-    border-right: var(--codeblock-border);
-    border-left: var(--codeblock-border);
+	border-right: var(--codeblock-border);
+	/* Right border for code blocks */
+	border-left: var(--codeblock-border);
+	/* Left border for code blocks */
 }
 
 /* Code blocks in Live Preview */
 .cm-line.HyperMD-codeblock .code-block-flair {
-    top: unset;
-    padding: 0 1px;
-    font-size: calc(var(--code-size) * 0.9);
-    color: var(--text-muted);
+	top: unset;
+	padding: 0 1px;
+	/* Padding for code block flair */
+	font-size: calc(var(--code-size) * 0.9);
+	/* Font size for code block flair */
+	color: var(--text-muted);
+	/* Color for code block flair */
 }
 
 /* Code Blocks in Reading Mode */
 .markdown-preview-view.markdown-preview-view pre {
-    padding: 0;
-    margin-top: var(--size-4-2);
-    border: var(--codeblock-border);
-    border-radius: var(--codeblock-roundness);
+	padding: 0;
+	/* No padding for pre elements */
+	margin-top: var(--size-4-2);
+	/* Top margin for pre elements */
+	border: var(--codeblock-border);
+	/* Border for pre elements */
+	border-radius: var(--codeblock-roundness);
+	/* Border radius for pre elements */
 }
 
 .markdown-preview-view pre code {
-    padding: var(--size-4-1) var(--size-4-2);
+	padding: var(--size-4-1) var(--size-4-2);
+	/* Padding for code elements within pre elements */
 }
 
-/* border on top created like this, since the
-::after element cannot be moved beyond a border */
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: CODEBLOCK BORDER TOP
+──────────────────────────────────────────────────────────────────
+
+ * Border on top for code blocks without language
+
+ * border on top created like this, since the `::after` element
+   cannot be moved beyond a border 
+   
+──────────────────────────────────────────────────────────────────
+*/
+
 .markdown-reading-view pre[class*="language-"]::before {
-    display: block;
-    line-height: 1.5em;
-    content: " ";
-    background-color: var(--code-block-alt-bg);
-    border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
-    border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
+	display: block;
+	line-height: 1.5em;
+	content: " ";
+	background-color: var(--code-block-alt-bg);
+	border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
+	border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
 }
 
 /* CODE BLOCK WITHOUT LANGUAGE */
 .markdown-reading-view pre:not([class^="language-"]) {
-    padding: 7px 7px 0;
-    overflow-y: hidden;
+	padding: 7px 7px 0;
+	overflow-y: hidden;
 }
 
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: CODE COPY BUTTON
+────────────────────────────────────────────────────────────────── 
+*/
+
 .copy-code-button.copy-code-button.copy-code-button {
-    top: unset;
-    bottom: 0;
-    padding: 0 var(--size-2-2);
-    background-color: var(--interactive-normal);
+	top: unset;
+	bottom: 0;
+	/* Bottom position for copy code button */
+	padding: 0 var(--size-2-2);
+	/* Padding for copy code button */
+	background-color: var(--interactive-normal);
+	/* Background color for copy code button */
 }
 
 .copy-code-button.copy-code-button.copy-code-button:hover {
-    color: var(--interactive-normal);
-    background-color: var(--hover-accent);
+	color: var(--interactive-normal);
+	/* Text color for copy code button on hover */
+	background-color: var(--hover-accent);
+	/* Background color for copy code button on hover */
 }
+
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: CODE BLOCKS WITHOUT LANGUAGE
+────────────────────────────────────────────────────────────────── 
+*/
 
 .markdown-reading-view pre:not([class^="language-"]) code {
-    display: block;
-    /* prevents bad multiline-indentation */
-    color: var(--text-normal);
+	display: block;
+	/* Display code block */
+	color: var(--text-normal);
+	/* Text color for code */
 }
 
-/* <<< language labels */
+/*
+──────────────────────────────────────────────────────────────────
+ * SUBSECTION: Language labels for code blocks
+────────────────────────────────────────────────────────────────── 
+*/
+
 pre[class*="language-"]::after {
-    position: absolute;
-    top: 2px;
-    right: 5px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    text-shadow: none;
-    content: attr(class);
-    /* fallback when none of the languages below is used */
+	position: absolute;
+	top: 2px;
+	/* Top position for language label */
+	right: 5px;
+	/* Right position for language label */
+	font-size: 0.9rem;
+	/* Font size for language label */
+	color: var(--text-muted);
+	/* Text color for language label */
+	text-shadow: none;
+	/* No text shadow for language label */
+	content: attr(class);
+	/* Content for language label */
 }
 
+/* Specific language labels */
 pre.language-c::after {
-    content: "C";
+	content: "C";
 }
 
 pre.language-python::after {
-    content: "Python";
+	content: "Python";
 }
 
 pre.language-py::after {
-    content: "Python";
+	content: "Python";
 }
 
 pre.language-nginx::after {
-    content: "Nginx";
+	content: "Nginx";
 }
 
 pre.language-css::after {
-    content: "CSS";
+	content: "CSS";
 }
 
 pre.language-node::after {
-    content: "Node";
+	content: "Node";
 }
 
 pre.language-react::after {
-    content: "React";
+	content: "React";
 }
 
 pre.language-javascript::after {
-    content: "JavaScript";
+	content: "JavaScript";
 }
 
 pre.language-js::after {
-    content: "JavaScript";
+	content: "JavaScript";
 }
 
 pre.language-typescript::after {
-    content: "TypeScript";
+	content: "TypeScript";
 }
 
 pre.language-ts::after {
-    content: "TypeScript";
+	content: "TypeScript";
 }
 
 pre.language-php::after {
-    content: "PHP";
+	content: "PHP";
 }
 
 pre.language-shell::after {
-    content: "Shell";
+	content: "Shell";
 }
 
 pre.language-bash::after {
-    content: "Bash";
+	content: "Bash";
 }
 
 pre.language-zsh::after {
-    content: "zsh";
+	content: "zsh";
 }
 
 pre.language-flow::after {
-    content: "Flow";
+	content: "Flow";
 }
 
 pre.language-sequence::after {
-    content: "Sequence";
+	content: "Sequence";
 }
 
 pre.language-sql::after {
-    content: "SQL";
+	content: "SQL";
 }
 
 pre.language-yaml::after {
-    content: "YAML";
+	content: "YAML";
 }
 
 pre.language-ini::after {
-    content: "INI";
+	content: "INI";
 }
 
 pre.language-xml::after {
-    content: "XML";
+	content: "XML";
 }
 
 pre.language-git::after {
-    content: "GIT";
+	content: "GIT";
 }
 
 pre.language-cs::after {
-    content: "C#";
+	content: "C#";
 }
 
 pre.language-cpp::after {
-    content: "C++";
+	content: "C++";
 }
 
 pre.language-java::after {
-    content: "JAVA";
+	content: "JAVA";
 }
 
 pre.language-html::after {
-    content: "HTML";
+	content: "HTML";
 }
 
 pre.language-txt::after {
-    content: "Plain Text";
+	content: "Plain Text";
 }
 
 pre.language-text::after {
-    content: "Plain Text";
+	content: "Plain Text";
 }
 
 pre.language-url::after {
-    content: "URL";
+	content: "URL";
 }
 
 pre.language-applescript::after {
-    content: "AppleScript";
+	content: "AppleScript";
 }
 
 pre.language-markdown::after {
-    content: "Markdown";
+	content: "Markdown";
 }
 
 pre.language-md::after {
-    content: "Markdown";
+	content: "Markdown";
 }
 
 pre.language-regex::after {
-    content: "Regex";
+	content: "Regex";
 }
 
 pre.language-lua::after {
-    content: "Lua";
+	content: "Lua";
 }
 
 pre.language-haskell::after {
-    content: "Haskell";
+	content: "Haskell";
 }
 
 pre.language-vim::after {
-    content: "vimrc";
+	content: "vimrc";
 }
 
-/* <<< Code Block: Line Numbers in Edit Mode */
+/* 
+────────────────────────────────────────────────────
+ * Code Block: Line Numbers in Edit Mode >>
+──────────────────────────────────────────────────── 
+
+ * Styling for line numbers in code blocks within 
+   edit mode.
+
+ * This applies when the "no-codeblock-line-numbers" 
+   class is not present.
+
+────────────────────────────────────────────────────
+*/
+
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
-    counter-reset: codeblock-line-numbers;
+	counter-reset: codeblock-line-numbers;
+	/* Reset line number counter */
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
-    padding-left: 2.8em;
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,
+	.HyperMD-codeblock-end) {
+	padding-left: 2.8em;
+	/* Padding for code lines */
 }
 
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
-    position: absolute;
-    left: 0;
-    width: 1.7em;
-    height: 100%;
-    /* ensures border closes w/ wrapped lines */
-    padding-right: 1.4em;
-    /* space is needed for collapse indicators */
-    font-size: 0.75em;
-    line-height: 2;
-    color: var(--text-muted);
-    text-align: right;
-    content: counter(codeblock-line-numbers);
-    counter-increment: codeblock-line-numbers;
-    background-color: var(--bg2);
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin,
+	.HyperMD-codeblock-end)::before {
+	position: absolute;
+	left: 0;
+	/* Left position for line numbers */
+	width: 1.7em;
+	/* Width for line numbers */
+	height: 100%;
+	/* Full height for line numbers */
+	padding-right: 1.4em;
+	/* Right padding for line numbers */
+	font-size: 0.75em;
+	/* Font size for line numbers */
+	line-height: 2;
+	/* Line height for line numbers */
+	color: var(--text-muted);
+	/* Text color for line numbers */
+	text-align: right;
+	/* Right align line numbers */
+	content: counter(codeblock-line-numbers);
+	/* Content for line numbers */
+	counter-increment: codeblock-line-numbers;
+	/* Increment line number counter */
+	background-color: var(--bg2);
+	/* Background color for line numbers */
 }
 
-/* code block end */
-
+/* Code block end styling */
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block {
-    padding: 2px 3.5px;
-    margin-left: -4px;
-    border-bottom-left-radius: var(--codeblock-roundness);
+	padding: 2px 3.5px;
+	/* Padding for end of code block */
+	margin-left: -4px;
+	/* Left margin for end of code block */
+	border-bottom-left-radius: var(--codeblock-roundness);
+	/* Bottom-left border radius */
 }
 
 body:not(.no-codeblock-line-numbers) .is-live-preview .HyperMD-codeblock-end span:nth-child(2)::before {
-    padding: 2px 0.85em;
-    margin-left: -4px;
-    content: " ";
-    background-color: var(--bg2);
-    border-bottom-left-radius: var(--radius-s);
+	padding: 2px 0.85em;
+	/* Padding for end of code block in live preview */
+	margin-left: -4px;
+	/* Left margin for end of code block in live preview */
+	content: " ";
+	/* Placeholder content */
+	background-color: var(--bg2);
+	/* Background color for end of code block in live preview */
+	border-bottom-left-radius: var(--radius-s);
+	/* Bottom-left border radius */
 }
 
 body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-end .cm-formatting-code-block:first-child {
-    /* "first-child" ensures that indented code blocks (e.g. in lists) do not look off */
-    background-color: var(--bg2);
+	background-color: var(--bg2);
+	/* Background color for first child in end of code block */
 }
 
 /* No Wrapping */
-/* .markdown-reading-view ensures that these do not get applied to canvases */
 .markdown-reading-view .markdown-preview-view pre:not(.frontmatter) code {
-    white-space: pre;
+	white-space: pre;
+	/* Prevent wrapping in code blocks */
 }
 
 .markdown-reading-view .markdown-preview-view pre:not(.frontmatter, [class*="language-"]) {
-    overflow-x: scroll;
+	overflow-x: scroll;
+	/* Enable horizontal scrolling for code blocks */
 }
