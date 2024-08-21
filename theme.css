@@ -3,9 +3,9 @@
 ──────────────────────────────────────────────────── */
 
 /* @settings
-name: Jayson's Settings
-id: shimmering-focus
-collapsed: false
+name: Theme Settings
+id: theme-settings
+collapsed: true
 settings:
   -
 		id: tab-stacks
@@ -554,29 +554,28 @@ body {
 */
 
 /* 
- * ───────────────────────────────────────────────────────────── 
+───────────────────────────────────────────────────────────── 
  * SECTION: Background Hue Definitions 
- * ─────────────────────────────────────────────────────────────
- *
+─────────────────────────────────────────────────────────────
+
  * Defines color variations based on the background hue.
+
  * The colors are calculated using HSL (Hue, Saturation, Lightness) values.
- *
- * ─────────────────────────────────────────────────────────────
+
+─────────────────────────────────────────────────────────────
  */
 
 /* Light Theme Base Hues */
 :root {
     --bg-hue-light: 230;
-}
+
 
 /* Dark Theme Base Hues */
-:root {
     --bg-hue-dark: 253;
     --bg-hue-dark-alt: 224;
-}
+
 
 /* Saturation Levels */
-:root {
     --bg-sat-light: 25%;
     --bg-sat-dark: 27%;
     --bg-sat-dark-alt: 15%;
@@ -630,7 +629,7 @@ body {
 */
 
 /* Dracula Color Base */
-.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark {
     --bg-hue: var(--bg-hue-dark);
     --bg-sat: var(--bg-sat-dark);
 
@@ -672,7 +671,7 @@ body {
  * ─────────────────────────────────────────────────────────────
  *
  * Universal Background Variables.
- * Establishes uniform method to apply theme color wraps. 
+ * Establishes a uniform method to apply theme color wraps. 
  *
  * ─────────────────────────────────────────────────────────────
 */
@@ -707,7 +706,7 @@ body.theme-light {
 }
 
 /* DRACULA BACKGROUND */
-body.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark {
 	--background-primary: #282A36;
 	--background-primary-alt: #2a2130;
 	--background-secondary: #2f2843;
@@ -774,7 +773,7 @@ body.theme-light {
 }
 
 /* Dark Theme Border Colors */
-body.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark { {
     --basic-border-color: var(--bg9);
     --thin-border: 1px solid var(--basic-border-color);
     --basic-border: 2px solid var(--basic-border-color);
@@ -797,7 +796,7 @@ body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
 
 
 
-body.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark { {
     /* Interactive */
     --interactive-normal: #2a2a2a;
     --interactive-hover: #303030;
@@ -813,7 +812,7 @@ body.theme-dark {
 */
 
 /* Dracula Dark Theme */
-body.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark { {
     --text-accent: #bd93f9;
     --text-accent-hover: #bd93f9;
     --text-normal: #F8F8F2; /* formerly var(--color-cyan-530)*/ 
@@ -879,7 +878,7 @@ body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
  */
 
 /* Dracula Theme Indentation */
-body.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark {
     --indentation-guide: var(--border-900);
     --indentation-guide-active: var(--border-300);
     --indentation-guide-width: 1.3px;
@@ -913,7 +912,7 @@ body.theme-dark {
 */
 
 /* Dark Theme - Dracula */
-body.theme-dark {
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark {
     --table-border-width: var(--border-width);
     --table-header-border-color: var(--bg5);
     --table-header-background: var(--bg6);
@@ -1264,6 +1263,23 @@ body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
 ─────────────────────────────────────────────────────────── 
 */
 
+
+body.theme-dark.dracula, .dracula .themed-color-wrapper > .theme-dark {
+    --code-size: var(--font-smaller);
+    --code-background: var(--background-primary-alt);
+    --code-normal: #F8F8F2; /* Formerly var(--color-slate-500) */
+    --code-comment: var(--color-gray-15);
+    --code-punctuation: var(--color-slate-900);
+    --code-tag: var(--color-magenta-300);
+    --code-value: var(--color-cyan-300);
+    --code-string: var(--color-green-500);
+    --code-property: var(--color-yellow-310);
+    --code-function: var(--color-magenta-300);
+    --code-keyword: var(--color-purple-910);
+    --code-important: var(--color-slate-300);
+}
+
+/* LYT Dark Theme color pallet */
 body.theme-dark.lyt-alt, .lyt-alt .themed-color-wrapper > .theme-dark {
     --code-size: var(--font-smaller);
     --code-background: var(--background-primary-alt);
